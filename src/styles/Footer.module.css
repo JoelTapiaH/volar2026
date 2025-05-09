@@ -1,7 +1,7 @@
 
 .footer {
     max-width: 1440px;
-    height: 45vh;
+    height: 48vh;
     color: var(--darkPurple);
     background-color: white;
     display: flex;
@@ -31,12 +31,14 @@
     align-items: flex-start;
 
 }
-.contactInfo > h1 {
+.CCC {
+    font-size: clamp(11px, 2em, 28px);
+    color: var(--turq);
     color: var(--darkTurq);
     font-size: clamp(11px, 4em, 40px);
     /*padding: 10px 0;*/
     font-weight: 650;
-    padding: 0 0 0.6em 0;
+    padding: 0 0 0.6em 0; 
     letter-spacing: 0.1em;
 }
 .info{
@@ -148,9 +150,7 @@ font-size: clamp(10px, 2em, 18px);
 .contactInfo {
     width: 50%;
 }
-.contactInfo >h1 {
-    font-size: clamp(11px, 2em, 28px);
-}
+
 .contactInput {
     font-size: clamp(10px, 2em, 14px);
     gap: 15px;

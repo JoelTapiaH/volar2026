@@ -15,26 +15,34 @@
     /*gap: 5em;*/
     padding: 4em 0;
 }
-.content{
+.testimonies{
     display: flex;
     flex-direction: row;
-    margin-top: 1em;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    
 }
-.message{
-    display: flex;
-    flex-direction: column;
-    margin-right: 2em;
-    line-height: 2em;
+.testimony > img{
+position: absolute;
+top:115px;
+left: -20px;
+}
+.content{
+    background-color: var(--yellow);
+    border-radius: 45px;
+    padding: 2em;
+    color: white;
+    width: 410px;
+    text-align: right;
 }
 .text{
-    font-size: clamp(11px, 2em, 28px);
-    color:var(--darkPurple);
-    font-weight: 620;
-    margin-bottom: 0.8em;
+    font-weight: 500;
+    font-size: 18px;
+
 }
-.animation > img {
-    width: 390px;
+.name{
+    font-weight: 600;
+    padding-top: 1em;
+}
+.job{
+    font-weight: 300;
 }

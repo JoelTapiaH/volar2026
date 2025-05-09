@@ -64,13 +64,13 @@ export default function Navbar() {
             onMouseEnter={() => setShowPublicacionesDropdown(true)}
             onMouseLeave={() => setShowPublicacionesDropdown(false)}
           >
-            <p style={{ width: "150px" }}>PROYECTOS</p>
+            <p style={{ width: "150px",}}>PROYECTOS</p>
             {showPublicacionesDropdown && (
               <div className={styles.dropdownContent}>
-                <a href="/publicaciones/articulos">Alianzas</a>
-                <a href="/publicaciones/contenido">Volar Colaboradores</a>
-                <a href="/publicaciones/medios">Volar en Comunidades</a>
-                <a href="/publicaciones/medios">Piloto Volar Cuna</a>
+                <a href="/publicaciones/articulos" >Alianzas</a>
+                <a href="/publicaciones/contenido" >Volar Colaboradores</a>
+                <a href="/publicaciones/medios" >Volar en Comunidades</a>
+                <a href="/publicaciones/medios" >Piloto Volar Cuna</a>
               </div>
             )}
           </div>

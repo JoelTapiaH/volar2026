@@ -59,7 +59,7 @@ export default function Footer() {
     <footer className={styles.footer}>
 
         <div className={styles.contactInfo}>
-            <h1>CONTÁCTANOS</h1>
+            <div className={styles.CCC}>CONTÁCTANOS</div>
             
                 <div className={styles.info}>
                     <div className={styles.socialMedia}>

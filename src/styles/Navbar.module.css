@@ -80,13 +80,13 @@
   }
   
   .dropdownContent a {
-	color: var(--green);
+	color: var(--grey);
 	text-decoration: none;
 	font-size: clamp(10px, 2em, 14.5px);
   }
   
   .dropdownContent a:hover {
-	color: var(--green);
+	color: var(--darkTurq);
   }
   
   /* Estilos para el botón hamburguesa */

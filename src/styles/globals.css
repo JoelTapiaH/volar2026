@@ -58,6 +58,18 @@ h1 {
   line-height: 1.2em;
   margin: 1em;
 }
+button{
+    font-size: 20px;
+    max-width: 250px;
+    max-height: 60px;
+    padding: 1em 1.5em;
+    border-radius: 50px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1em;
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
