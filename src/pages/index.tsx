@@ -1,12 +1,15 @@
 import Head from "next/head";
-/*import styles from "./styles/globals.css";*/
+import styles from "../styles/Index.module.css";
+import Hero from "@/components/Home/Hero";
 
 
 export default function Home() {
   return (
-    <>
-      xxxx
-      Hola
-    </>
+    <div className={styles.container}>
+      <Hero/>
+    xxxxaa
+    aaaaaaaaaas
+
+  </div>
   );
 }

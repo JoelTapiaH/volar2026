@@ -7,6 +7,7 @@
   --red: #EB477A;
   --orange: #F69240;
   --turq: #6DC8C9;
+  --Softturq: #C5E6E3;
   --darkTurq: #00B0B4;
   --purple: #AE96B2;
   --darkPurple: #242365;
@@ -39,6 +40,8 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Poppins';
+
 }
 
 a {
