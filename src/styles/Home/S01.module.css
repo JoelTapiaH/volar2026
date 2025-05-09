@@ -1,0 +1,53 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-between;*/
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+    height: 100%;
+    min-height: 42vh;
+    background-color: var(--background);
+    position: relative;
+    z-index: 1; /* AAAAAAAAAA Asegúrate de que este valor sea menor que el z-index del dropdown */
+    color: black;
+    /*gap: 5em;*/
+    padding: 4em 0;
+}
+
+.items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 80%;
+}
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 1em;
+}
+.icon {
+    padding: 1em;
+    width: 80px; /*ver relacion ladoxlado*/
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon > img {
+    height: 40px;
+}
+.title {
+    font-weight: 550;
+    font-size: clamp(11px, 2em, 18px);
+    margin: 1em 0;
+}
+.description {
+    color: var(--grey);
+    font-weight: 200;
+    font-size: clamp(11px, 2em, 15px);
+}

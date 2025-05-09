@@ -11,6 +11,7 @@
   --darkTurq: #00B0B4;
   --purple: #AE96B2;
   --darkPurple: #242365;
+  --grey: #727171;
 
 }
 
@@ -49,6 +50,14 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  color: var(--turq);
+  font-size: clamp(12px, 2em, 29px);
+  font-weight: 550;
+  text-align: center;
+  line-height: 1.2em;
+  margin: 1em;
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

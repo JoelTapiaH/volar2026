@@ -7,6 +7,7 @@ import cloud from "@/assets/images/cloud_hero.png";
 export default function Hero() {
     return (
       <div className={styles.container}>
+        
         <div className={styles.cloud}>
         <img src={cloud.src} />
         <button>¡Entérate más!</button>
