@@ -1,0 +1,186 @@
+
+.footer {
+    max-width: 1440px;
+    height: 45vh;
+    color: var(--darkPurple);
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    margin: 0 auto;
+}
+.logo {
+    max-height: 80px;
+}
+.form {
+    width: 45%;
+
+}
+.contactInfo {
+    width: 65%;
+    /*padding: 0 5em;
+    margin: 3% 0 1% 0;*/
+    height: 85%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+
+}
+.contactInfo > h1 {
+    color: var(--darkTurq);
+    font-size: clamp(11px, 4em, 40px);
+    /*padding: 10px 0;*/
+    font-weight: 650;
+    padding: 0 0 0.6em 0;
+    letter-spacing: 0.1em;
+}
+.info{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70%;
+    margin: 0 0 0 25%;
+}
+.contactInput {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    font-size: clamp(10px, 1em, 16px);
+    align-items: center; 
+    gap: 18px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+}
+.contactInput:hover{
+    transform: scale(1.025);
+    opacity: 0.9; 
+}
+.contactInput > img {
+    /*width: 10%;*/
+    max-height: 25px;
+    object-fit: cover;
+    /*margin-left: 10px;*/
+}
+.contactdata{
+color:var(--darkPurple);
+font-weight: 500;
+font-size: clamp(10px, 2em, 18px);
+
+}
+.contactInfo > h4 {
+    padding: 0.5em 0;
+    text-align: left;
+    font-size: clamp(10px, 1em, 14px);
+    box-sizing: border-box;
+    font-weight: normal;
+}
+.terms {
+    /*padding: 20px;*/
+    text-align: right;
+    font-size: clamp(10px, 1em, 14px);
+    font-weight: 500;
+    box-sizing: border-box;
+    color: grey;
+}
+.socialMedia {
+    display: flex;
+    flex-direction: row;
+    /*justify-content: space-evenly;*/
+    justify-content: space-between;
+    gap: 2em;
+    align-items: center;
+    position: relative;
+}
+.socialMedia > a > div{
+    position: relative;
+    background: none;
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+}
+.socialMedia > a > div:hover{
+    background: var(--turq);
+    border-radius: 20px;
+    box-shadow: -3px 3px 0 hwb(157 36% 49%);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.socialMedia > a > div:active {
+    /*background: hwb(157 36% 59%);*/
+    background: #F2B530;
+    top: 3px;
+    left: -3px;
+    box-shadow: -3px 3px 0 hsl(48, 23%, 43%);
+    border-radius: 40px;
+}
+.socialMedia > a > div::before {
+    border: solid 3px transparent;
+    border-right: solid 3px hsl(157, 17%, 44%);
+    border-left-width: 0px;
+    left: -3px;
+}
+.socialMedia > a > div::after {
+    border: solid 10px transparent;
+    border-top: solid 3px hsl(157, 17%, 44%);
+    border-bottom-width: 0px;
+    bottom: -3px;
+}
+
+
+@media (max-width: 1400px) {
+.footer {
+    justify-content: space-between;
+    padding: 0 2em;
+}
+
+.contactInfo {
+    width: 50%;
+}
+.contactInfo >h1 {
+    font-size: clamp(11px, 2em, 28px);
+}
+.contactInput {
+    font-size: clamp(10px, 2em, 14px);
+    gap: 15px;
+}
+.pages{
+    font-size: clamp(10px, 2em, 14px);
+}
+
+}
+
+@media (max-width: 900px) {
+.indexInfo {
+    display: none;
+}
+.contactInfo {
+    width: 100%;
+    align-items: center;
+}
+.info {
+    padding: 0;
+    justify-content: space-evenly;
+}
+}
+
+@media (max-width: 400px) {
+.contactInfo > h4 {
+    font-size: 12px;
+}
+.contactInfo > h6{
+font-weight: 300;
+font-size: 12px;
+}
+}

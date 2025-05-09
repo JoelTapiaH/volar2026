@@ -1,9 +1,4 @@
-@font-face {
-  font-family: 'Poppins';
-  src: url('/fonts/Poppins.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
   --background: #ffffff;
@@ -20,8 +15,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #ffffff;
   }
 }
 
@@ -34,11 +29,10 @@ body {
 }
 
 body {
-  color: var(--foreground);
   background: var(--background);
   font-family: 'Poppins';
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
 }
 
 * {
