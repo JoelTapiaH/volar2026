@@ -1,87 +1,120 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import styles from '../styles/Navbar.module.css';
 import logo from "@/assets/images/LOGO_VOLAR.png";
-/*import useContentful from "../../utils/useContentful";
 
-const PopUpID = "1CinImCNF28ceVD7VuYJvZ";
-interface PopUpFields {
-  popUpImg: {
-    fields: {
-      file: {
-        url: string;
-      };
-    };
-  };
-  popUpLink: string;
-  popUpButton: string;
-  popUpShow: boolean;
-}
-
-interface ContentfulData {
-  fields: PopUpFields;
-}
-*/
 export default function Navbar() {
- /* const { data, loading, error } = useContentful({ id: PopUpID }) as {
-    data: ContentfulData | null;
-    loading: boolean;
-    error: Error | null;
-  };*/
+  const router = useRouter();
+  const [activeLink, setActiveLink] = useState('');
   const [showPublicacionesDropdown, setShowPublicacionesDropdown] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Estado para el menú hamburguesa
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Sincronizar con la ruta actual
+  useEffect(() => {
+    setActiveLink(router.pathname);
+  }, [router.pathname]);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen); // Alternar entre abrir y cerrar el menú
+    setIsMenuOpen(!isMenuOpen);
   };
-  
-  /*const { popUpShow, popUpLink } = data.fields;*/
 
+  const handleLinkClick = (path: string) => {
+    setActiveLink(path);
+    router.push(path);
+  };
+
+  // Función para verificar si un link está activo
+  const isActive = (path: string) => {
+    return activeLink === path || 
+           (path === '/publicaciones' && activeLink.startsWith('/publicaciones'));
+  };
 
   return (
     <div style={{display:'flex', flexDirection:'column', justifyContent:'center'}}>
-            <div className={styles.logo}>
-            <img src={logo.src} alt="Logo" />
-            </div>
-    
-    <nav className={styles.navbar}>
-
-      {/* Botón del menú hamburguesa */}
-      <button className={styles.hamburger} onClick={toggleMenu}>
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      {/* Menú de navegación */}
-      <div className={`${styles.menu} ${isMenuOpen ? styles.open : ''}`}>
-        <div className={styles.links}>
-          <a href="/">INICIO</a>
-          <a href="/programas">NOSOTROS</a>
-
-          {/* Dropdown para PUBLICACIONES */}
-          <div
-            className={styles.dropdown}
-            onMouseEnter={() => setShowPublicacionesDropdown(true)}
-            onMouseLeave={() => setShowPublicacionesDropdown(false)}
-          >
-            <p style={{ width: "150px",}}>PROYECTOS</p>
-            {showPublicacionesDropdown && (
-              <div className={styles.dropdownContent}>
-                <a href="/publicaciones/articulos" >Alianzas</a>
-                <a href="/publicaciones/contenido" >Volar Colaboradores</a>
-                <a href="/publicaciones/medios" >Volar en Comunidades</a>
-                <a href="/publicaciones/medios" >Piloto Volar Cuna</a>
-              </div>
-            )}
-          </div>
-
-          <a href="/comunidad">APRENDAMOS</a>
-
-        </div>
-
-
+      <div className={styles.logo}>
+        <img src={logo.src} alt="Logo" />
       </div>
-    </nav>
+    
+      <nav className={styles.navbar}>
+        <button className={styles.hamburger} onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div className={`${styles.menu} ${isMenuOpen ? styles.open : ''}`}>
+          <div className={styles.links}>
+            <a 
+              href="/" 
+              className={`${styles.mainLink} ${isActive('/') ? styles.active : ''}`}
+              onClick={(e) => {
+                e.preventDefault();
+                handleLinkClick('/');
+              }}
+            >
+              INICIO
+            </a>
+
+            <a 
+              href="/programas" 
+              className={`${styles.mainLink} ${isActive('/programas') ? styles.active : ''}`}
+              onClick={(e) => {
+                e.preventDefault();
+                handleLinkClick('/programas');
+              }}
+            >
+              NOSOTROS
+            </a>
+
+            <div
+              className={styles.dropdown}
+              onMouseEnter={() => setShowPublicacionesDropdown(true)}
+              onMouseLeave={() => setShowPublicacionesDropdown(false)}
+            >
+              <p 
+                className={`${styles.mainLink} ${isActive('/publicaciones') ? styles.active : ''}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick('/publicaciones');
+                }}
+                style={{ width: "150px" }}
+              >
+                PROYECTOS
+              </p>
+              {showPublicacionesDropdown && (
+                <div className={styles.dropdownContent}>
+                  <a href="/publicaciones/articulos" className={styles.secondLink}>Alianzas</a>
+                  <a href="/publicaciones/contenido" className={styles.secondLink}>Volar Colaboradores</a>
+                  <a href="/publicaciones/medios" className={styles.secondLink}>Volar en Comunidades</a>
+                  <a href="/publicaciones/medios" className={styles.secondLink}>Piloto Volar Cuna</a>
+                </div>
+              )}
+            </div>
+
+            <a 
+              href="/comunidad" 
+              className={`${styles.mainLink} ${isActive('/comunidad') ? styles.active : ''}`}
+              onClick={(e) => {
+                e.preventDefault();
+                handleLinkClick('/comunidad');
+              }}
+            >
+              APRENDAMOS
+            </a>
+
+            <a 
+              href="/contacto" 
+              className={`${styles.mainLink} ${isActive('/contacto') ? styles.active : ''}`}
+              onClick={(e) => {
+                e.preventDefault();
+                handleLinkClick('/contacto');
+              }}
+            >
+              CONTÁCTANOS
+            </a>
+          </div>
+        </div>
+      </nav>
     </div>
   );
 }

@@ -1,0 +1,13 @@
+.customCursor {
+  position: fixed;
+  width: 44px;
+  height: 46px;
+  z-index: 1;
+  pointer-events: none;
+  transform-origin: center center;
+  will-change: transform;
+  transition: transform 0.05s linear;
+  left: 0;
+  top: 0;
+}
+

@@ -70,6 +70,10 @@ button{
     align-items: center;
     line-height: 1em;
 }
+/*a, button, input, [role="button"] {
+  cursor: auto !important;
+}*/
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

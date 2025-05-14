@@ -34,7 +34,8 @@
   
   .links {
 	display: flex;
-	gap: 3rem;
+	text-align: center;
+	gap: 5rem;
 	align-items: flex-start;
   }
   
@@ -44,8 +45,98 @@
 	text-decoration: none;
 	font-size: 18px;
 	cursor: pointer;
-	width: 150px;
   }
+  .secondLink {
+	width: 145px;
+  }
+
+  .mainLink {
+	width: 155px;
+	display: flex;
+    justify-content: center;
+	color: var(--darkPurple);
+	text-decoration: none;
+	font-size: 18px;
+	cursor: pointer;
+	position: relative;
+	padding: 0.6em 0;
+	transition: color 0.3s ease 0.1s;
+  }
+
+  .mainLink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--darkTurq);
+  z-index: -1;
+  transform: scaleX(0); /* Inicia sin width */
+  transform-origin: left;
+  transition: color 0.3s ease 0.1s;
+  border-radius: 35px;
+}
+
+.mainLink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--darkTurq);
+  z-index: -1;
+  border-radius: 35px;
+  transform: scale(0); /* Comienza desde tamaño 0 (centro) */
+  transform-origin: center; /* Expansión desde el centro */
+  transition: transform 0.5s cubic-bezier(0.28, 0.44, 0.49, 1); /* Curva ease-in suave */
+}
+
+.mainLink:hover {
+  color: var(--background);
+
+}
+
+.mainLink:hover::before {
+  transform: scale(1); /* Se expande a tamaño completo */
+}
+
+/* Versión mejorada para el efecto de elevación */
+.mainLink {
+  will-change: transform; /* Optimización para animaciones */
+}
+
+.mainLink:hover {
+  transform: translateY(-2px);
+  transition: transform 0.4s ease;
+}
+
+.mainLink.active {
+  background-color: var(--darkTurq) !important;
+  color: var(--background) !important;
+  box-shadow: 0 4px 12px rgba(0, 176, 180, 0.25);
+  transform: translateY(-2px);
+  border-radius: 35px;
+  font-weight: 550;
+}
+
+/* Asegúrate que el hover no sobrescriba el estado activo */
+.mainLink.active:hover {
+  opacity: 0.95;
+}
+
+/* Para el dropdown 
+.dropdown .mainLink.active {
+  background-color: transparent !important;
+  color: var(--darkTurq) !important;
+}
+
+.dropdown .mainLink.active:hover {
+  background-color: var(--darkTurq) !important;
+  color: var(--background) !important;
+}
+*/
   @media (max-width:1200px) {
   .navbar {
 	padding: 0 1rem;
@@ -54,12 +145,16 @@
   .links p {
 	width: 120px;}
   }
+
+
   .links a:hover,
   .links p:hover {
-	color: var(--darkTurq);
 	font-weight: 550;
   }
-  
+
+  .secondLink:hover {
+		color:var(--darkTurq);
+  }
   .dropdown {
 	position: relative;
   }
@@ -77,6 +172,7 @@
 	width: 175px;
 	box-sizing: border-box;
 	z-index: 1000;
+	text-align: left;
   }
   
   .dropdownContent a {

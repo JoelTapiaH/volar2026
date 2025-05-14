@@ -2,20 +2,65 @@ import React from "react";
 import styles from "@/styles/Home/hero.module.css";
 import example from "@/assets/images/example_img1.png";
 import cloud from "@/assets/images/cloud_hero.png";
-
+import CustomCursor from "../Cursor";
 
 export default function Hero() {
+  // Generamos múltiples instancias de los SVGs con posiciones y animaciones aleatorias
+  const floatingShapes = Array.from({ length: 30 }).map((_, index) => {
+    const isLargeShape = Math.random() > 0.5;
+    const size = isLargeShape ? 90 : 79;
+    const duration = 13 + Math.random() * 15; // Entre 15-30 segundos
+    const delay = Math.random() * 3; // Retardo aleatorio hasta 10s
+    const left = `${Math.random() * 100}%`; // Posición horizontal aleatoria
+    const bottom = `${-size - Math.random() * 100}px`; // Comienza fuera de pantalla
+
     return (
-      <div className={styles.container}>
-
-        <div className={styles.cloud}>
-        <img src={cloud.src} />
-        <button style={{backgroundColor:'var(--darkPurple)'}}>¡Entérate más!</button>
-        </div>
-
-        <img src={example.src} />
-
+      <div 
+        key={index}
+        className={styles.floatingShape}
+        style={{
+          animationDuration: `${duration}s`,
+          animationDelay: `${delay}s`,
+          left,
+          bottom,
+        }}
+      >
+        {isLargeShape ? (
+          <svg width="161" height="91" viewBox="0 0 161 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.9888 27.0516C8.69225 31.9229 0 43.8778 0 57.8552C0 76.1585 14.9109 91 33.3005 91H128.444C146.834 90.9997 161 80.0708 161 61.7674C159.51 51.7805 155.973 42.6792 143.312 36.9342C143.312 36.9342 140.944 29.0862 136.05 23.591C128.789 15.4368 118.548 14.3613 115.625 14.2088C112.703 14.0564 106.196 14.5558 99.8523 15.9153C92.6515 -1.66135 64.3626 0.0451177 64.3626 0.0451177C46.875 1.75159 30.2994 4.73153 20.9865 27.0073C20.9865 27.792 20.9888 26.3248 20.9888 27.0516Z" fill="#B6E1E1"/>
+          </svg>
+        ) : (
+          <svg width="79" height="45" viewBox="0 0 79 45" fill="none">
+            <path d="M10.2988 13.3771C4.26514 15.786 0 21.6978 0 28.6097C0 37.6608 7.31651 45 16.34 45H63.0254C72.0489 44.9998 79 39.5954 79 30.5443C78.2691 25.6057 76.5332 21.1051 70.3207 18.2642C70.3207 18.2642 69.1588 14.3833 66.7576 11.6659C63.1945 7.63359 58.1696 7.10172 56.7355 7.02634C55.3013 6.95096 52.1085 7.19794 48.9958 7.8702C45.4625 -0.821546 31.5817 0.0223109 31.5817 0.0223109C23.0008 0.866169 14.8674 2.33977 10.2977 13.3553C10.2977 13.7433 10.2988 13.0177 10.2988 13.3771Z" fill="white"/>
+          </svg>
+        )}
       </div>
     );
-  }
-  
+  });
+
+  return (
+    <div className={styles.container}>
+      <CustomCursor/>
+      {/* SVGs flotantes de fondo */}
+      <div className={styles.floatingBackground}>
+        {floatingShapes}
+      </div>
+
+      <div className={styles.textBox}>
+            <div className={styles.cloud} style={{backgroundImage: `url(${cloud.src})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+              <div className={styles.cloudText}>
+                Trabajamos niñas por más niñas y niños fuertes, sanos y felices, sanos y felices
+              </div>
+
+            </div>
+
+            <a className={styles.styledButton} href="#"><span>¡Entérate más!</span></a>
+      </div>
+
+      <div className={styles.imgContainer}>
+      <img src={example.src} alt="Imagen principal" className={styles.mainImage} />
+      </div>
+
+    </div>
+  );
+}
