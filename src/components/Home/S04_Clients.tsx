@@ -1,12 +1,14 @@
 import React from "react";
 import styles from "@/styles/Home/S04.module.css";
+import useContentful from "../../../utils/useContentful";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import example1 from "@/assets/images/example_logo1.png";
-import example2 from "@/assets/images/example_logo2.png";
-import example3 from "@/assets/images/example_logo3.png";
+
+
 import logo from "@/assets/images/LOGO_VOLAR.png";
 import Image from "next/image";
+
+const HomeID = "1DOSrCFPzlUZug4YeXOkcs";
 
 const responsive = {
   superLargeDesktop: {
@@ -28,29 +30,41 @@ const responsive = {
 };
 
 export default function S04_Clients() {
-  const logos = [example1, example2, example3];
+  const { data } = useContentful({ id: HomeID });
 
+    if (!data || !(data as any).fields) {
+      return null;
+    }
+
+    const { homeTitleS04,  homeLogos1, homeLogos2 } = (data as any).fields;
   return (
     <div className={styles.container}>
       <h1 style={{ display: "flex", alignItems: "flex-end" }}>
-        CONFIAN EN
+        {homeTitleS04}
         <img src={logo.src} style={{ width: "200px", marginLeft: "1em" }} />
       </h1>
 
       <div className={styles.clients}>
         <div className={styles.carousel1}>
           <Carousel responsive={responsive} infinite autoPlay autoPlaySpeed={2000}>
-            {logos.map((img, index) => (
-              <div key={index} style={{ padding: "1rem" }}>
-                <Image
-                  src={img}
-                  alt={`Logo ${index + 1}`}
-                  width={150}
-                  height={80}
-                  objectFit="contain"
-                />
-              </div>
-            ))}
+          {homeLogos1 &&
+              homeLogos1.map((img: any, index: number) => {
+                const imgUrl = img.fields.file.url;
+                return (
+                  <div key={index}>
+                    <img
+                      src={imgUrl}
+                      alt={`Imagen ${index + 1}`}
+                      style={{
+                        width: "100%",
+                        height: "220px",
+                        borderRadius: "30px",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+                );
+              })}
           </Carousel>
         </div>
       </div>

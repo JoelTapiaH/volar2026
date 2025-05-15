@@ -2,12 +2,12 @@
     display: flex;
     flex-direction: column;
     /*justify-content: space-between;*/
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
     width: 100%;
     max-width: 1440px;
+    margin: 0 auto;
     height: 100%;
-    min-height: 42vh;
+    min-height: 35vh;
     background-color: var(--background);
     position: relative;
     z-index: 1; /* AAAAAAAAAA Asegúrate de que este valor sea menor que el z-index del dropdown */
@@ -20,14 +20,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width: 80%;
-}
-.item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: 1em;
 }
 .icon {
     padding: 1em;
@@ -40,6 +32,7 @@
 }
 .icon > img {
     height: 40px;
+    transition: transform 0.3s ease-out;
 }
 .title {
     font-weight: 550;
@@ -50,4 +43,46 @@
     color: var(--grey);
     font-weight: 200;
     font-size: clamp(11px, 2em, 15px);
+    transition: color 0.3s ease;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 300px;
+    transition: transform 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 1em;
+}
+
+
+.item:hover{
+    transform: scale(1.04);
+}
+.item:hover .description {
+    font-weight: 400;
+    color: var(--item-color);
+}
+.item:hover .title {
+    font-weight: 700;
+}
+.item:hover .icon {
+    animation: 
+        rotateBell 0.2s forwards, /* Animación de rotación */
+        bellSwing 0.7s infinite ease-in-out; /* Animación de balanceo */
+    animation-delay: 0s, 0.2s; /* La rotación ocurre primero, luego el balanceo */
+    box-shadow: 0 2px 3px rgba(48, 47, 47, 0.5);
+}
+
+@keyframes rotateBell {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(5deg); }
+}
+
+@keyframes bellSwing {
+    0%, 100% { transform: rotate(5deg) rotateZ(-10deg); }
+    50% { transform: rotate(5deg) rotateZ(10deg); }
 }
