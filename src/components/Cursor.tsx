@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import styles from '@/styles/Home/hero.module.css';
+import styles from '@/styles/cursor.module.css';
 
 const CustomCursor = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
