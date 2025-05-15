@@ -5,7 +5,7 @@ const CustomCursor = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
   const position = useRef({ x: 0, y: 0 });
   const angle = useRef(0);
-  const requestRef = useRef<number>();
+  const requestRef = useRef<number | null>(null);
 
   const updateCursor = () => {
     if (cursorRef.current) {
