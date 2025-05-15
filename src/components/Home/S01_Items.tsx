@@ -1,19 +1,31 @@
 import React from "react";
 import styles from "@/styles/Home/S01.module.css";
+import useContentful from "../../../utils/useContentful";
+
+
 import example from "@/assets/images/item_icon.png";
 import example2 from "@/assets/images/item_icon2.png";
 import example3 from "@/assets/images/item_icon3.png";
 
-import cloud from "@/assets/images/cloud_hero.png";
+
+const HomeID = "1DOSrCFPzlUZug4YeXOkcs";
 
 
 export default function S01_Items() {
+    const { data } = useContentful({ id: HomeID });
+
+  // Verificar si los datos están disponibles usando `any`
+  if (!data || !(data as any).fields) {
+    return null;
+  }
+
+  // Acceder a los campos usando `any`
+  const { homeTitleS01 } = (data as any).fields;
     return (
       <div className={styles.container}>
         
 <h1>
-DESARROLLO INFANTIL TEMPRANO <br/>
-EN EL PERÚ
+{homeTitleS01}
 </h1>
 <div className={styles.items}>
 <div className={styles.item}>
