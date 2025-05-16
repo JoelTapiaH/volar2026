@@ -105,11 +105,11 @@ export default function Navbar() {
             </a>
 
             <a 
-              href="/contacto" 
-              className={`${styles.mainLink} ${isActive('/contacto') ? styles.active : ''}`}
+              href="/contactanos" 
+              className={`${styles.mainLink} ${isActive('/contactanos') ? styles.active : ''}`}
               onClick={(e) => {
                 e.preventDefault();
-                handleLinkClick('/contacto');
+                handleLinkClick('/contactanos');
               }}
             >
               CONTÁCTANOS

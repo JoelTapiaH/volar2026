@@ -1,0 +1,71 @@
+.formContainer {
+  max-width: 700px;
+  margin: 4em auto;
+  padding: 1rem;
+  font-family: sans-serif;
+  border: 2px dashed var(--turq);
+  border-radius: 70px;
+  padding: 3em 5em;
+}
+
+.textIntro{
+  color: var(--darkTurq);
+  font-weight: 500;
+font-size: 18px;
+text-align: right;
+}
+
+.formGroup {
+  margin-top: 0.5em;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5em;
+}
+
+.formGroup > label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--yellow);
+}
+
+.formGroup > input, .formGroup >
+select, .formGroup >
+textarea {
+  padding: 0.5rem;
+  border: 2px solid var(--turq);
+  background-color: white;
+  border-radius: 15px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  color: var(--darkPurple);
+}
+
+.formRow {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.halfWidth {
+  flex: 1 1 48%;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.submitButton {
+  background-color: var(--darkPurple);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submitButton:hover {
+  background-color: #005bb5;
+}
