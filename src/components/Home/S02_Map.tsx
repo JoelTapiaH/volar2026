@@ -2,7 +2,6 @@ import React from "react";
 import styles from "@/styles/Home/S02.module.css";
 import useContentful from "../../../utils/useContentful";
 
-import example from "@/assets/images/metric_icon.png";
 import mapa from "@/assets/images/mapax.png";
 
 const HomeID = "1DOSrCFPzlUZug4YeXOkcs";

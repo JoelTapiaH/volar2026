@@ -58,11 +58,11 @@ export default function Navbar() {
             </a>
 
             <a 
-              href="/programas" 
-              className={`${styles.mainLink} ${isActive('/programas') ? styles.active : ''}`}
+              href="/nosotros" 
+              className={`${styles.mainLink} ${isActive('/nosotros') ? styles.active : ''}`}
               onClick={(e) => {
                 e.preventDefault();
-                handleLinkClick('/programas');
+                handleLinkClick('/nosotros');
               }}
             >
               NOSOTROS
