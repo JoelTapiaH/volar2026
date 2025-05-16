@@ -14,22 +14,22 @@ export default function Nosotros() {
             <div className={styles.box} style={{backgroundColor:"var(--yellow)"}}>
                 <div>Loremipsum</div>
                 <div>Example</div>
-                <button href="#" style={{width:"170px", height:"70px", fontSize:"16px", marginTop:"1em"}} className={styles.but}>¡Conoce más!</button>
+                <button  style={{width:"170px", height:"70px", fontSize:"16px", marginTop:"1em"}} className={styles.but}>¡Conoce más!</button>
             </div>
                         <div className={styles.box} style={{backgroundColor:"var(--red)"}}>
                 <div>Loremipsum</div>
                 <div>Example</div>
-                <button href="#" style={{width:"170px", height:"70px", fontSize:"16px", marginTop:"1em"}} className={styles.but}>¡Conoce más!</button>
+                <button  style={{width:"170px", height:"70px", fontSize:"16px", marginTop:"1em"}} className={styles.but}>¡Conoce más!</button>
             </div>
                         <div className={styles.box} style={{backgroundColor:"var(--darkPurple)"}}>
                 <div>Loremipsum</div>
                 <div>Example</div>
-                <button href="#" style={{width:"170px", height:"70px", fontSize:"16px", marginTop:"1em"}} className={styles.but}>¡Conoce más!</button>
+                <button  style={{width:"170px", height:"70px", fontSize:"16px", marginTop:"1em"}} className={styles.but}>¡Conoce más!</button>
             </div>
                         <div className={styles.box} style={{backgroundColor:"var(--darkTurq)"}}>
                 <div>Loremipsum</div>
                 <div>Example</div>
-                <button href="#" style={{width:"170px", height:"70px", fontSize:"16px", marginTop:"1em"}} className={styles.but}>¡Conoce más!</button>
+                <button  style={{width:"170px", height:"70px", fontSize:"16px", marginTop:"1em"}} className={styles.but}>¡Conoce más!</button>
             </div>
         </div>
       </div>

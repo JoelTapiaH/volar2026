@@ -130,8 +130,8 @@ const responsive = {
 };
 
 export const SliderTestimonials = ({ id }: TestimonialProps) => {
-  const { data } = useContentful<TestimonialData>({ id: HomeID });
-  const carouselRef = React.useRef<Carousel | null>(null); // Tipar la referencia
+  const { data } = useContentful({ id: HomeID });
+  const carouselRef = React.useRef<Carousel>(null);
 
   if (!data || !data.fields) {
     return null;
@@ -175,7 +175,7 @@ export const SliderTestimonials = ({ id }: TestimonialProps) => {
             itemClass="carousel-item-padding-40-px"
           >
             {homeTestimonies &&
-              homeTestimonies.map((card, index) => {
+              homeTestimonies.map((card:any, index:number) => {
                 const imgUrl = card.fields.testimonyImg.fields.file.url;
                 const text = card.fields.testimonyText;
                 return (

@@ -73,10 +73,9 @@ const Form: React.FC = () => {
           name="soy"
           value={formData.soy}
           onChange={handleChange}
-          placeholder="Escoge tu rol"
           required
         >
-          <option value="">Selecciona una opción</option>
+          <option value="" disabled hidden>Escoge tu rol</option>
           <option value="cuidador">Cuidador</option>
           <option value="mamá o papá">Mamá o Papá</option>
         </select>
