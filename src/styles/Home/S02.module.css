@@ -45,11 +45,13 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
     margin-left: 1em;
 }
 .number {
     font-weight: 700;
-    font-size: clamp(11px, 2em, 28px);
+    font-size: clamp(11px, 2em, 30px);
+    transition: transform 0.5 ease-in;
 }
 .description {
     color: var(--grey);
@@ -57,4 +59,36 @@
     font-size: clamp(11px, 2em, 17px);
     text-align: left;
     line-height: 1.2em;
+    width: 70%;
+    transition: transform 0.5 ease-in;
+
+}
+
+.metric:hover .number {
+    transform: scale(1.1);
+}
+.metric:hover .description {
+    transform: scale(1.05);
+}
+/*estilos de check*/
+.checkIcon {
+  transition: transform 0.3s ease;
+}
+
+.metric:hover .checkIcon {
+  transform: scale(1.1);
+}
+
+.animatedCheck {
+  stroke-dasharray: 40; /* Longitud aproximada del check */
+  stroke-dashoffset: 40;
+  transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+.metric:hover .animatedCheck {
+  stroke-dashoffset: 0;
+}
+
+.metric:hover .staticCheck {
+    display: none;
 }

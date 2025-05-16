@@ -3,9 +3,13 @@ import styles from "@/styles/Home/hero.module.css";
 import example from "@/assets/images/example_img1.png";
 import cloud from "@/assets/images/cloud_hero.png";
 import CustomCursor from "../Cursor";
+import useContentful from "../../../utils/useContentful";
+
+const HeroID = "6BIYAvzCrXhYZavETVVEt2";
 
 export default function Hero() {
-  // Generamos múltiples instancias de los SVGs con posiciones y animaciones aleatorias
+    const { data } = useContentful({ id: HeroID });
+  // Creador de SVGs en posiciones y animaciones aleatorias
   const floatingShapes = Array.from({ length: 30 }).map((_, index) => {
     const isLargeShape = Math.random() > 0.5;
     const size = isLargeShape ? 90 : 79;
@@ -13,7 +17,6 @@ export default function Hero() {
     const delay = Math.random() * 3; // Retardo aleatorio hasta 10s
     const left = `${Math.random() * 100}%`; // Posición horizontal aleatoria
     const bottom = `${-size - Math.random() * 100}px`; // Comienza fuera de pantalla
-
     return (
       <div 
         key={index}
@@ -38,7 +41,15 @@ export default function Hero() {
     );
   });
 
-  return (
+      if (!data || !(data as any).fields) {
+      return null;
+    }
+        const { heroText, heroImg } = (data as any).fields;
+          const image = heroImg.fields.file.url;
+
+console.log('TRICS', data)
+
+        return (
     <div className={styles.container}>
       <CustomCursor/>
       {/* SVGs flotantes de fondo */}
@@ -49,7 +60,7 @@ export default function Hero() {
       <div className={styles.textBox}>
             <div className={styles.cloud} style={{backgroundImage: `url(${cloud.src})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
               <div className={styles.cloudText}>
-                Trabajamos niñas por más niñas y niños fuertes, sanos y felices, sanos y felices
+                {heroText}
               </div>
 
             </div>
@@ -58,7 +69,7 @@ export default function Hero() {
       </div>
 
       <div className={styles.imgContainer}>
-      <img src={example.src} alt="Imagen principal" className={styles.mainImage} />
+      <img src={image} alt="Imagen principal" className={styles.mainImage} />
       </div>
 
     </div>

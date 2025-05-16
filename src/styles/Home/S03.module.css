@@ -19,9 +19,11 @@
     display: flex;
     flex-direction: row;
     margin-top: 1em;
-    width: 100%;
-    justify-content: center;
+    width: 50%;
+    justify-content: space-evenly;
     align-items: center;
+    position: relative;
+
 }
 .message{
     display: flex;
@@ -34,7 +36,65 @@
     color:var(--darkPurple);
     font-weight: 620;
     margin-bottom: 0.8em;
+    line-height: 1.4;
 }
-.animation > img {
-    width: 390px;
+.text2 {
+    margin-left: 1em;
 }
+.text3 {
+    margin-left: 2em;
+}
+.animation {
+    width: 300px;
+    height: 250px;
+    position: relative;
+}
+.small {
+    position: absolute;
+    border-radius: 6.5em;
+    width: 6.5em;
+    height: 6.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom:1px;
+    left: 35px;
+    transition: transform 0.2s ease-in;
+}
+.small > img {
+    width: 30%;
+}
+.small:hover , .medium:hover, .large:hover {
+    transform: scale(1.1);
+}
+.medium {
+    position: absolute;
+    border-radius: 7.5em;
+    width: 7.5em;
+    height: 7.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease-in;
+}
+.medium > img {
+    width: 30%;
+}
+.large {
+    position: absolute;
+    top:45px;
+    right: 1px;
+    border-radius: 9.5em;
+    width: 9.5em;
+    height: 9.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease-in;
+}
+.large > img {
+    width: 30%;
+}
+
+
+

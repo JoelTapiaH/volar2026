@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "@/styles/Home/S01.module.css";
 import useContentful from "../../../utils/useContentful";
+import { TextBreak } from "../Text_break";
 
 const HomeID = "1DOSrCFPzlUZug4YeXOkcs";
 
@@ -15,7 +16,7 @@ export default function S01_Items() {
     
     return (
       <div className={styles.container}>
-        <h1>{homeTitleS01}</h1>
+        <h1><TextBreak>{homeTitleS01}</TextBreak></h1>
         <div className={styles.items}>
           {homeItems &&
           homeItems.map ((item: any, index:number)=> {
