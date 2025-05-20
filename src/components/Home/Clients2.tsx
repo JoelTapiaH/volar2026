@@ -52,11 +52,12 @@ const CarouselContainer = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
+  height: 100%;
   justify-content: center;
 `;
 
 const CarouselWrapper = styled.div`
-  width: 85%;
+  width: 100%;
   overflow: hidden;
 `;
 
@@ -138,7 +139,7 @@ export default function Clients2() {
                   autoPlaySpeed={3000}
                   transitionDuration={500}
                   className="carrusel"
-                  itemClass="carousel-item-padding-40-px"
+                  itemClass="carousel-item-padding-0-px"
                   
                 >
                   {homeLogos2.map((image: any, index:number) => {
@@ -151,10 +152,12 @@ export default function Clients2() {
                           src={imageUrl}
                           alt={image.fields.title || `Logo ${index + 1}`}
                           style={{
-                            width: "100px",
-                            height: "50px",
-                            borderRadius: "30px",
-                            objectFit: "cover",
+                            width: "100%",
+                            minHeight:"200px",
+                            height: "150px",
+                            objectFit: "scale-down",
+                            display: "flex",
+                            justifyContent:"center",
                           }}
                         />
                       </div>
@@ -165,6 +168,5 @@ export default function Clients2() {
             </CarouselWrapper>
           </CarouselContainer>
         </Container>
-
   );
 }

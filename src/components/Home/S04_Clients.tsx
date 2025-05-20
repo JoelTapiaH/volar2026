@@ -7,6 +7,7 @@ import logo from "@/assets/images/LOGO_VOLAR.png";
 import Image from "next/image";
 import Clients1 from "./Clients1";
 import Clients2 from "./Clients2";
+import Clients3 from "./Clients3";
 
 const HomeID = "1DOSrCFPzlUZug4YeXOkcs";
 
@@ -35,6 +36,7 @@ export default function S04_Clients() {
 
       <Clients1/>
       <Clients2/>
+      <Clients3/>
 
     </div>
   );

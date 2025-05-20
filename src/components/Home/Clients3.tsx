@@ -128,7 +128,7 @@ export default function Clients1() {
   if (!data || !(data as any).fields) {
       return null;
     }
-  const { homeLogos1  } = data.fields;
+  const { homeLogos3  } = data.fields;
 
   return (
         <Container>
@@ -144,7 +144,7 @@ export default function Clients1() {
                   className="carrusel"
                   itemClass="carousel-item-padding-0-px"
                 >
-                  {homeLogos1.map((image: any, index:number) => {
+                  {homeLogos3.map((image: any, index:number) => {
                     const imageUrl = `https:${image.fields.file.url}`;
                     console.log(`Imagen ${index}:`, imageUrl); // Debug
                     

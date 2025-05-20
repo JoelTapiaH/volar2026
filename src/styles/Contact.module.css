@@ -1,6 +1,13 @@
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 4em 0;
+  display: flex;
+}
 .formContainer {
   max-width: 700px;
-  margin: 4em auto;
+  /*margin: 4em auto;*/
   padding: 1rem;
   font-family: sans-serif;
   border: 2px dashed var(--turq);
@@ -28,9 +35,7 @@ text-align: right;
   color: var(--yellow);
 }
 
-.formGroup > input, .formGroup >
-select, .formGroup >
-textarea {
+.inputBig, .inputSmall, .selectForm{
   padding: 0.5rem;
   border: 2px solid var(--turq);
   background-color: white;
@@ -39,6 +44,9 @@ textarea {
   width: 100%;
   box-sizing: border-box;
   color: var(--darkPurple);
+}
+.inputBig:active {
+    border-color: red;
 }
 
 .formRow {
@@ -68,4 +76,14 @@ textarea {
 
 .submitButton:hover {
   background-color: #005bb5;
+}
+
+.leftCloud{
+  position: absolute;
+  left: 29%;
+}
+.rightCloud {
+  position: absolute;
+  bottom: 15%;
+  right: 28%;
 }
