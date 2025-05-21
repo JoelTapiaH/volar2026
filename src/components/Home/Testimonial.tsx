@@ -17,23 +17,16 @@ const Testimonial: React.FC<TestimonialProps> = ({ color, img, text, position, a
       <div className={styles.container}>
 
         <div className={styles.testimonialContainer} style={{backgroundColor: rgbaColor}}>
-
           <div className={styles.richText}>
-
-            <p className={styles.richTextSon}>{BoldUnderlineContentful(text)}</p>
-
-            </div>
+                    <p className={styles.richTextSon}>{BoldUnderlineContentful(text)}</p>
+          </div>
           
           <div className={styles.info}>
-              <img src={img} />
-              
-              <div style={{fontWeight:600}}>
                     <div>{author}</div>
-                    <div style={{color:"#113245"}}>{position}</div>
-              </div>
-
+                    <div className={styles.position}>{position}</div>
           </div>
 
+        <img src={img} />
         </div>
 
       </div>

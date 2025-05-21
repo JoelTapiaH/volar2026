@@ -4,6 +4,7 @@ import useContentful from "../../../utils/useContentful";
 
 import example from "@/assets/images/example_testimony.png";
 import { SliderTestimonials } from "./Testimonials";
+import { TextBreak } from "../Text_break";
 
 const HomeID = "1DOSrCFPzlUZug4YeXOkcs";
 
@@ -19,7 +20,8 @@ export default function S05_Testimonies() {
     <>
     <div className={styles.container}>
       <h1 style={{ display: "flex", alignItems: "flex-end" }}>
-      {homeTitleS06}
+        <TextBreak>{homeTitleS06}</TextBreak>
+      
       </h1>
         <SliderTestimonials/>  
     </div>

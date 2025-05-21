@@ -4,29 +4,29 @@ import app from "@/assets/images/app_img.png";
 import android from "@/assets/images/android.png";
 import apple from "@/assets/images/apple.png";
 import useContentful from "../../utils/useContentful";
+import { TextBreak } from "./Text_break";
+import { ButtonsApp } from "./Buttons_App";
 
-const HomeID = "1DOSrCFPzlUZug4YeXOkcs";
+const BannerID = "4UFkxHy5Crj6Fyz64M9rH2";
 
 
 export default function Banner_app() {
-  const { data } = useContentful({ id: HomeID });
+  const { data } = useContentful({ id: BannerID });
 
     if (!data || !(data as any).fields) {
       return null;
     }
-
-    const { homeTextS05 } = (data as any).fields;
+    console.log ('ASOX', data)
+    const { bannerText, bannerImg } = (data as any).fields;
+    const image = data.fields.bannerImg.fields.file.url;
     return (
       <div className={styles.container}>
         
-        <img src={app.src} />
+        <img src={image} />
 
       <div className={styles.item}>
-        <div className={styles.title} style={{color:'var(--turq)'}}>{homeTextS05}</div>
-        <div className={styles.buttons}>
-        <button style={{backgroundColor:'var(--darkPurple)', maxHeight:'70px', width:'180px',fontSize:'15px'}}><div>Versión<br/>Android</div> <img src={android.src} style={{marginLeft:'1em'}}/></button>
-        <button style={{backgroundColor:'var(--darkPurple)', maxHeight:'70px', width:'180px',fontSize:'15px'}}><div>Versión<br/>Apple</div> <img src={apple.src} style={{marginLeft:'1em'}}/></button>
-        </div>
+        <div className={styles.title} style={{color:'var(--turq)'}}><TextBreak>{bannerText}</TextBreak></div>
+        <ButtonsApp/>
       </div>
 
 

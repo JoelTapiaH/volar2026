@@ -85,7 +85,7 @@
     align-items: center;
     justify-content: center;
     font-weight: 500;
-    font-size: clamp(12px, 2em, 21px);
+    font-size: clamp(12px, 2em, 16px); /*antes era 21*/
     line-height: 1.5;
     color: var(--turq);
 }

@@ -22,12 +22,15 @@ export default function S03_Resources() {
     homeColorBig, 
     homeIconSmall, 
     homeIconMedium, 
-    homeIconBig 
+    homeIconBig,
+    homeButtonS03, 
   } = (data as any).fields;
   
   const smallIcon = `https:${homeIconSmall.fields.file.url}`;
   const mediumIcon = `https:${homeIconMedium.fields.file.url}`;
   const bigIcon = `https:${homeIconBig.fields.file.url}`;
+  const textButton = data.fields.homeButtonS03.fields.buttonText;
+  const colorButton = data.fields.homeButtonS03.fields.buttonColor;
 
   return (
     <div className={styles.container}>
@@ -39,7 +42,7 @@ export default function S03_Resources() {
             <div className={styles.text2}>{homeTextS03P2}</div>
             <div className={styles.text3}>{homeTextS03P3}</div>
           </div>
-          <button style={{backgroundColor:'var(--darkPurple)'}}>¡ AQUÍ !</button>
+          <a className={styles.styledButton} style={{backgroundColor:colorButton}} href="#"><span>{textButton}</span></a>
         </div>
 
         <div>

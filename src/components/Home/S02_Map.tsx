@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "@/styles/Home/S02.module.css";
 import useContentful from "../../../utils/useContentful";
-
-import mapa from "@/assets/images/mapax.png";
+import { TextBreak } from "../Text_break";
+import InteractiveSVGButtons from "./Map";
 
 const HomeID = "1DOSrCFPzlUZug4YeXOkcs";
 
@@ -19,7 +19,8 @@ export default function S02_Map() {
       <div className={styles.container}>
         
           <h1>
-          {homeTitleS02}
+            <TextBreak>{homeTitleS02}</TextBreak>
+          
           </h1>
           <div className={styles.metrics}>
 
@@ -69,14 +70,14 @@ export default function S02_Map() {
 
                   <div className={styles.detail}>
                   <div className={styles.number} style={{color:colorNumber}}>{number}</div>
-                  <div className={styles.description} style={{color:colorText}}>{text}</div>
+                  <div className={styles.description} style={{color:colorText}}><TextBreak>{text}</TextBreak></div>
                   </div>
               </div>
             )
           })
           }
       </div>
-      <img src={mapa.src}/>
+      <InteractiveSVGButtons/>
 
       </div>
     );

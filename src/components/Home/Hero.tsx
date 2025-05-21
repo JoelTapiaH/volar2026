@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "@/styles/Home/hero.module.css";
-import example from "@/assets/images/example_img1.png";
 import cloud from "@/assets/images/cloud_hero.png";
 import CustomCursor from "../Cursor";
 import useContentful from "../../../utils/useContentful";
+import { TextBreak } from "../Text_break";
 
 const HeroID = "6BIYAvzCrXhYZavETVVEt2";
 
@@ -60,7 +60,10 @@ console.log('TRICS', data)
       <div className={styles.textBox}>
             <div className={styles.cloud} style={{backgroundImage: `url(${cloud.src})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
               <div className={styles.cloudText}>
-                {heroText}
+                <TextBreak>
+                  {heroText}
+                </TextBreak>
+                
               </div>
 
             </div>
