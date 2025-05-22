@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "@/styles/buttonApp.module.css";
-import { TextBreak } from "./Text_break";
+import styles from "@/styles/banner/buttonApp.module.css";
+import { TextBreak } from "../../global/Text_break";
 
 interface TestimonialProps {
   color: string;

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "@/styles/Home/S01.module.css";
 import useContentful from "../../../utils/useContentful";
-import { TextBreak } from "../Text_break";
+import { TextBreak } from "../global/Text_break";
 
 const HomeID = "1DOSrCFPzlUZug4YeXOkcs";
 

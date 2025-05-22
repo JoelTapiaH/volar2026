@@ -5,9 +5,9 @@ import "react-multi-carousel/lib/styles.css";
 
 import logo from "@/assets/images/LOGO_VOLAR.png";
 import Image from "next/image";
-import Clients1 from "./Clients1";
-import Clients2 from "./Clients2";
-import Clients3 from "./Clients3";
+import Clients1 from "./S04/Clients1";
+import Clients2 from "./S04/Clients2";
+import Clients3 from "./S04/Clients3";
 
 const HomeID = "1DOSrCFPzlUZug4YeXOkcs";
 

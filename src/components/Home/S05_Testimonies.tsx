@@ -1,10 +1,8 @@
 import React from "react";
 import styles from "@/styles/Home/S05.module.css";
 import useContentful from "../../../utils/useContentful";
-
-import example from "@/assets/images/example_testimony.png";
-import { SliderTestimonials } from "./Testimonials";
-import { TextBreak } from "../Text_break";
+import { SliderTestimonials } from "./S05/Testimonials";
+import { TextBreak } from "../global/Text_break";
 
 const HomeID = "1DOSrCFPzlUZug4YeXOkcs";
 

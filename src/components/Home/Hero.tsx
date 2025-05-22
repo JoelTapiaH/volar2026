@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "@/styles/Home/hero.module.css";
 import cloud from "@/assets/images/cloud_hero.png";
-import CustomCursor from "../Cursor";
+import CustomCursor from "../global/Cursor";
 import useContentful from "../../../utils/useContentful";
-import { TextBreak } from "../Text_break";
+import { TextBreak } from "../global/Text_break";
 
 const HeroID = "6BIYAvzCrXhYZavETVVEt2";
 

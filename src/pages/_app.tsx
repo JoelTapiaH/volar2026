@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/global/Navbar";
+import Footer from "@/components/global/Footer";
 
 export default function App({ Component, pageProps }: AppProps) {
   /*const [isLoading, setIsLoading] = useState(true);

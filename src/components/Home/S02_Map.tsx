@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "@/styles/Home/S02.module.css";
 import useContentful from "../../../utils/useContentful";
-import { TextBreak } from "../Text_break";
-import InteractiveSVGButtons from "./Map";
+import { TextBreak } from "../global/Text_break";
+import InteractiveSVGButtons from "./S02/Map";
 
 const HomeID = "1DOSrCFPzlUZug4YeXOkcs";
 

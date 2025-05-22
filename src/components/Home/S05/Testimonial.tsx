@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "@/styles/Home/Testimonial.module.css";
-import BoldUnderlineContentful from "../../../utils/BoldUnderlineContentful";
+import BoldUnderlineContentful from "../../../../utils/BoldUnderlineContentful";
 
 interface TestimonialProps {
   color: string;

@@ -1,12 +1,10 @@
 import styles from "@/styles/Footer.module.css";
 import mail from "@/assets/images/mail.png";
 import phone from "@/assets/images/phone.png";
-import whatsapp from "@/assets/images/whatsapp.png";
 import ig from "@/assets/images/ig.png";
 import yt from "@/assets/images/yt.png";
 import fb from "@/assets/images/fb.png";
 import lin from "@/assets/images/in.png";
-import Link from 'next/link';
 import logo from "@/assets/images/LOGO_VOLAR.png";
 
 /*import useContentful from "../../utils/useContentful";
@@ -34,6 +32,7 @@ interface FooterData {
     };
   }
 */
+
 export default function Footer() {
     /*const { data } = useContentful<FooterData>({ id: FooterID });
     if (!data || !data.fields) {

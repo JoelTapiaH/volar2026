@@ -2,7 +2,7 @@
 import * as React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import useContentful from "../../../utils/useContentful";
+import useContentful from "../../../../utils/useContentful";
 import styled from "styled-components";
 import Testimonial from "./Testimonial";
 

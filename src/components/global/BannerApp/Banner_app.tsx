@@ -1,11 +1,8 @@
 import React from "react";
-import styles from "@/styles/Banner.module.css";
-import app from "@/assets/images/app_img.png";
-import android from "@/assets/images/android.png";
-import apple from "@/assets/images/apple.png";
-import useContentful from "../../utils/useContentful";
-import { TextBreak } from "./Text_break";
-import { ButtonsApp } from "./Buttons_App";
+import styles from "@/styles/banner/Banner.module.css";
+import useContentful from "../../../../utils/useContentful";
+import { TextBreak } from "../Text_break";
+import { ButtonsApp } from "../Buttons_App";
 
 const BannerID = "4UFkxHy5Crj6Fyz64M9rH2";
 

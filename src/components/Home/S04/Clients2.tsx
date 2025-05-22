@@ -1,5 +1,5 @@
 import React from "react";
-import useContentful from "../../../utils/useContentful";
+import useContentful from "../../../../utils/useContentful";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import styled from "styled-components";
