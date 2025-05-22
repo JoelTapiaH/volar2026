@@ -1,11 +1,12 @@
 .container {
     margin-top:4em;
-        margin-bottom:4em;
-
+    margin-bottom:4em;
+    max-width: 1440px;
     display: flex;
     flex-direction: column;
-        align-items: center;
-
+    align-items: center;
+    margin: 0 auto;
+    padding: 4em 0;
 }
 .effect {
     transition: transform 0.5 ease-in;
@@ -17,7 +18,7 @@
 }
 .boxes{
     display: flex;
-        flex-direction: row;
+    flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     width: 1440px;

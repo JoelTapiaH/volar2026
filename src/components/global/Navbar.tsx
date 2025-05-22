@@ -94,11 +94,11 @@ export default function Navbar() {
             </div>
 
             <a 
-              href="/comunidad" 
-              className={`${styles.mainLink} ${isActive('/comunidad') ? styles.active : ''}`}
+              href="/aprendamos/aprendamos" 
+              className={`${styles.mainLink} ${isActive('/aprendamos/aprendamos') ? styles.active : ''}`}
               onClick={(e) => {
                 e.preventDefault();
-                handleLinkClick('/comunidad');
+                handleLinkClick('/aprendamos/aprendamos');
               }}
             >
               APRENDAMOS

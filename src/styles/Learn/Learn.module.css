@@ -1,0 +1,14 @@
+.container {
+    margin-top:4em;
+    margin-bottom:4em;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 4em 0;
+}
+.description {
+    color: var(--grey);
+    font-size: clamp(12px, 2em, 20px);
+}
