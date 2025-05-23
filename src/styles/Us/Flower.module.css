@@ -1,0 +1,19 @@
+.container {
+  position: relative;
+  display: flex;
+  gap: 2rem;
+}
+
+.svgWrapper {
+  position: relative;
+}
+
+.tooltip {
+  max-width: 200px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 8px;
+  color: #242365;
+  font-size: 14px;
+}

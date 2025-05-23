@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "@/styles/Home/Testimonial.module.css";
-import BoldUnderlineContentful from "../../../../utils/BoldUnderlineContentful";
+import PurpleContentful from "../../../../utils/PurpleContentful";
 
 interface TestimonialProps {
   color: string;
@@ -18,7 +18,7 @@ const Testimonial: React.FC<TestimonialProps> = ({ color, img, text, position, a
 
         <div className={styles.testimonialContainer} style={{backgroundColor: rgbaColor}}>
           <div className={styles.richText}>
-                    <p className={styles.richTextSon}>{BoldUnderlineContentful(text)}</p>
+                    <p className={styles.richTextSon}>{PurpleContentful(text)}</p>
           </div>
           
           <div className={styles.info}>

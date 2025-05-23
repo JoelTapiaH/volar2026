@@ -4,9 +4,9 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const Bold = ({ children }) => <span style={{fontWeight: "bold" }}>{children}</span>;
 
-const UnderlinePink = ({ children }) => <span style={{ color: "#6CBDA0", fontWeight: "bold" }}>{children}</span>;
+const UnderlinePink = ({ children }) => <span style={{ color: "var(--darkPurple)", fontWeight: "bold" }}>{children}</span>;
 
-const BoldUnderlineContentful = (richText) => {
+const PurpleContentful = (richText) => {
   const options = {
     renderMark: {
       [MARKS.BOLD]: (text) => <Bold>{text}</Bold>,
@@ -14,11 +14,11 @@ const BoldUnderlineContentful = (richText) => {
     },
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) => {
-        if (node.content.some((item) => item.nodeType === "text" && item.value.includes("//"))) {
+        if (node.content.some((item) => item.nodeType === "text" && item.value.includes("$"))) {
           // Check for '/' in text nodes and replace with <br>
           return node.content.map((item, index) => {
-            if (item.nodeType === "text" && item.value.includes("//")) {
-              const parts = item.value.split("//");
+            if (item.nodeType === "text" && item.value.includes("$")) {
+              const parts = item.value.split("$");
               const elements = parts.reduce((acc, part, i) => {
                 acc.push(part);
                 if (i < parts.length - 1) {
@@ -41,4 +41,4 @@ const BoldUnderlineContentful = (richText) => {
   return documentToReactComponents(richText, options);
 };
 
-export default BoldUnderlineContentful;
+export default PurpleContentful;
