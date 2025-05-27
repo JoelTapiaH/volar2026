@@ -98,7 +98,9 @@ export default function FlowerComplete() {
 
 {hovered && (
         <div className={styles.tooltip}>
-          <div text={petalsData.find((_, i) => petals[i].key === hovered)?.p1Text || ""} style={{color:'#242365'}}/>
+          <div style={{ color: '#242365' }}>
+            {petalsData.find((_, i) => petals[i].key === hovered)?.p1Text || ""}
+          </div>
         </div>
       )}
 
