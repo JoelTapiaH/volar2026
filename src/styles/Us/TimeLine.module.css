@@ -2,16 +2,14 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 180px;
     align-items: center;
     font-size: clamp(11px, 2em, 20px);
-
+    text-align: center;
 }
-
 .hito > img {
-    width: 200px;
+    width: 150px;
 }
-
 .order {
     display: flex;
     align-items: center;
@@ -27,12 +25,29 @@
     padding: 1em;
     margin: 0 0 1em 0;
 }
-
 .text, .year {
     font-weight: 550;
+    min-height: 52px;
 }
 .year {
     padding-top: 1em;
     font-size: clamp(11px, 2em, 17px);
-
+}
+@media (max-width:860px) {
+    .hito {
+        width: 150px;
+        font-size: clamp(11px, 2em, 17px);
+    }
+    .hito > img {
+    width: 120px;
+}
+}
+@media (max-width:815px) {
+    .hito {
+        width: 130px;
+        font-size: clamp(11px, 2em, 17px);
+    }
+    .hito > img {
+    width: 100px;
+}
 }

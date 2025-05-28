@@ -19,8 +19,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 3em  auto;
-    width: 30%;
+    margin: 4em  auto;
+    max-width: 450px;
 }
 .title {
     display: flex;
@@ -30,8 +30,9 @@
     font-size: clamp(11px, 3em, 38px);
     align-items: center;
     justify-content: center;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.02em;
     line-height: 1.1em;
+    width: 100%;
 }
 .titleText {
     display: flex;
@@ -107,9 +108,11 @@
     align-items: center;
     text-align: center;
     position: relative;
+    width: 100%;
+    margin: 4em 0 2em 0;
 }
 .logo {
-    max-width: 45%;
+    max-width: 35%;
 }
 .fPart1 {
     font-size: clamp(11px, 2em, 22px);
@@ -117,13 +120,15 @@
     margin: 1em 0 0.4em 0;
 }
 .fPart2 {
+    width: 90%;
     font-size: clamp(11px, 2em, 26px);
     font-weight: 600;
-    margin: 0 0 1em 0;
+    margin: 0 auto;
     position: relative;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    justify-content: center;
 }
 .infoIcon {
     cursor: pointer;
@@ -154,6 +159,38 @@
     opacity: 1;
 }
 
+.timeContainer{
+    margin: 4em 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.timeWrapper {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    overflow-x: auto; /* Scroll horizontal */
+    overflow-y: hidden; /* Oculta scroll vertical */
+    scrollbar-width: thin; /* Para navegadores modernos */
+    scrollbar-color: var(--turq) transparent; /* Color del scroll */
+    padding: 20px 0;
+    -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+}
+
+/* Estilos para la barra de scroll */
+.timeWrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.timeWrapper::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.timeWrapper::-webkit-scrollbar-thumb {
+    background-color: var(--turq);
+    border-radius: 20px;
+}
 
 .boxes{
     display: flex;
@@ -162,12 +199,65 @@
     justify-content: space-evenly;
     margin-top: 1em;
     gap: 2em ;
+    flex-wrap: wrap;
+    padding: 0 2em;
 }
-.boxes2{
+.boxes2 {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
-    gap: 2em ;
-    top: 25px;
+    gap: 2em; /* Espacio entre elementos */
+    padding: 0 2em; /* Espacio a los lados */
+    height: 100%;
+    min-width: max-content; /* Obliga al contenedor a ser lo suficientemente ancho */
+}
+
+@media (min-width:700px) {
+    .timeWrapper {
+        justify-content: center;
+    }
+}
+@media (max-width:730px) {
+.fPart1 {
+    font-size: clamp(11px, 2em, 20px);
+}
+.fPart2 {
+    font-size: clamp(11px, 2em, 22px);
+}
+}
+
+@media (max-width:560px) {
+.heading {
+    max-width: 300px;
+    margin: 2em 2em;
+}
+.title {
+    display: flex;
+    flex-direction: row;
+    color: var(--turq);
+    font-weight: 600;
+    font-size: clamp(11px, 3em, 25px);
+}
+.fPart1 {
+    font-size: clamp(11px, 2em, 18px);
+}
+.fPart2 {
+    width: 85%;
+}
+.info {
+    display: none;
+}
+}
+@media (max-width:500px) {
+.logo {
+    max-width: 45%;
+}
+}
+@media (max-width:345px) {
+.logo {
+    max-width: 55%;
+}
+.Part2 {
+    padding-left: 1.2em;
+}
 }
