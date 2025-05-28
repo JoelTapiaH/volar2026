@@ -43,11 +43,11 @@
     padding: 0.2em 0.8em;
     margin: 0.5em 0;
 }
-.advice > a > .container{
+.advice > .container{
         box-shadow: 0 2px 4px rgba(48, 47, 47, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease-in;
 }
-.advice > a:hover > .container {
+.advice:hover > .container {
     transform: scale(1.01);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }

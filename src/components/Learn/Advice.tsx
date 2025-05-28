@@ -7,15 +7,16 @@ interface AdviceProps {
   tag: string;
   img: string;
   color: string;
+  infography: string;
+  onClick: () => void;
 }
 
-const Advice: React.FC<AdviceProps> = ({ text, age, tag, img, color }) => {
+const Advice: React.FC<AdviceProps> = ({ text, age, tag, img, color, infography, onClick }) => {
     
   const rgbaColor = `${color}CC`;
   return(
     <div className={styles.advice}>
-    <a target="_blank" href="#">
-      <div className={styles.container} style={{backgroundColor: rgbaColor}}>
+      <div className={styles.container} style={{backgroundColor: rgbaColor}} onClick={onClick}>
         <img src={img} className={styles.image}/>
         <div className={styles.content} >
           <div className={styles.age}>
@@ -31,7 +32,6 @@ const Advice: React.FC<AdviceProps> = ({ text, age, tag, img, color }) => {
         </div>
 
       </div>
-    </a>
     </div>
 );
   };
