@@ -12,10 +12,10 @@
     justify-content: space-evenly;
     margin: 0 auto;
 
-    overflow: visible;
+    overflow: hidden;
 }
 .logo, .logoBreca  {
-    max-height: 80px;
+    max-width: 180px;
 }
 
 .contactInfo {
