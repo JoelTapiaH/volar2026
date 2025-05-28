@@ -19,7 +19,6 @@ export default function S05_Testimonies() {
     <div className={styles.container}>
       <h1>
         <TextBreak>{homeTitleS06}</TextBreak>
-      
       </h1>
         <SliderTestimonials/>  
     </div>

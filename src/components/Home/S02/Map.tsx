@@ -2,13 +2,31 @@ import { useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
 
 import styles from "@/styles/Home/Map.module.css";
-import foto from "@/assets/images/foto4.png";
-import foto1 from "@/assets/images/foto1.png";
-import foto2 from "@/assets/images/foto2.png";
-import foto3 from "@/assets/images/foto3.png";
 import decoration from "@/assets/images/airplane.png";
 
+import LIMA1 from "@/assets/images/mapa/L1.png";
+import LIMA2 from "@/assets/images/mapa/L2.png";
 
+import ARQ1 from "@/assets/images/mapa/A1.png";
+import ARQ2 from "@/assets/images/mapa/A2.png";
+
+import PUNO1 from "@/assets/images/mapa/PUN1.png";
+import PUNO2 from "@/assets/images/mapa/PUN2.png";
+
+import CUS1 from "@/assets/images/mapa/C1.png";
+import CUS2 from "@/assets/images/mapa/C2.png";
+
+import JUN1 from "@/assets/images/mapa/J1.png";
+import JUN2 from "@/assets/images/mapa/J2.png";
+
+import PIU1 from "@/assets/images/mapa/P1.png";
+import PIU2 from "@/assets/images/mapa/P2.png";
+
+import LAM1 from "@/assets/images/mapa/LA1.png";
+import LAM2 from "@/assets/images/mapa/LA2.png";
+
+import SMP1 from "@/assets/images/mapa/S1.png";
+import SMP2 from "@/assets/images/mapa/S2.png";
 
 type ButtonData = {
   id: number;
@@ -21,14 +39,14 @@ const InteractiveSVGButtons = () => {
   const [activeButton, setActiveButton] = useState<number>(1); // Inicia con el botón 1 seleccionado
 
   const buttonData = [
-    { id: 1, title: 'PIURA', year: '201X', image: foto, position: { cx: 21.5, cy: 21.5 }, text: 'Taciti 1 hac senectus convallis malesuada torquent quis vivamus'},
-    { id: 2, title: 'LAMBAYEQUE', year: '2012',image: foto1, position: { cx: 37.5, cy: 65.5 }, text: 'Taciti 2hac senectus convallis malesuada torquent quis vivamus' },
-    { id: 3, title: 'SAN MARTIN', year: '2024',image: foto2, position: { cx: 128.5, cy: 82.5 }, text: 'Taciti3 hac senectus convallis malesuada torquent quis vivamus' },
-    { id: 4, title: 'LIMA', year: '2023',image: foto3, position: { cx: 128.5, cy: 217.5 }, text: 'Taciti 4hac senectus convallis malesuada torquent quis vivamus' },
-    { id: 5, title: 'JUNÍN', year: '2018',image: foto1, position: { cx: 180.5, cy: 209.5 }, text: 'Taciti 5hac senectus convallis malesuada torquent quis vivamus' },
-    { id: 6, title: 'CUSCO', year: '2024',image: foto2, position: { cx: 259.5, cy: 258.5 }, text: 'Taciti 6hac senectus convallis malesuada torquent quis vivamus' },
-    { id: 7, title: 'PUNO', year: '2011',image: foto3, position: { cx: 323.5, cy: 314.5 }, text: 'Taciti 7hac senectus convallis malesuada torquent quis vivamus' },
-    { id: 8, title: 'AREQUIPA', year: '201Y',image: foto1, position: { cx: 255.5, cy: 344.5 }, text: 'Taciti hac 8senectus convallis malesuada torquent quis vivamus' },
+    { id: 1, title: 'PIURA', year: '201X', image: PIU1, image2: PIU2, position: { cx: 21.5, cy: 21.5 }, text: 'Taciti 1 hac senectus convallis malesuada torquent quis vivamus'},
+    { id: 2, title: 'LAMBAYEQUE', year: '2012',image: LAM1, image2: LAM2,position: { cx: 37.5, cy: 65.5 }, text: 'Taciti 2hac senectus convallis malesuada torquent quis vivamus' },
+    { id: 3, title: 'SAN MARTIN', year: '2024',image: SMP1, image2: SMP2,position: { cx: 128.5, cy: 82.5 }, text: 'Taciti3 hac senectus convallis malesuada torquent quis vivamus' },
+    { id: 4, title: 'LIMA', year: '2023',image: LIMA1, image2: LIMA2,position: { cx: 128.5, cy: 217.5 }, text: 'Taciti 4hac senectus convallis malesuada torquent quis vivamus' },
+    { id: 5, title: 'JUNÍN', year: '2018',image: JUN1, image2: JUN2,position: { cx: 180.5, cy: 209.5 }, text: 'Taciti 5hac senectus convallis malesuada torquent quis vivamus' },
+    { id: 6, title: 'CUSCO', year: '2024',image: CUS1, image2: CUS2,position: { cx: 259.5, cy: 258.5 }, text: 'Taciti 6hac senectus convallis malesuada torquent quis vivamus' },
+    { id: 7, title: 'PUNO', year: '2011',image: PUNO1, image2: PUNO2,position: { cx: 323.5, cy: 314.5 }, text: 'Taciti 7hac senectus convallis malesuada torquent quis vivamus' },
+    { id: 8, title: 'AREQUIPA', year: '201Y',image: ARQ1, image2: ARQ2, position: { cx: 255.5, cy: 344.5 }, text: 'Taciti hac 8senectus convallis malesuada torquent quis vivamus' },
   ];
 
     const activeButtonData = buttonData.find(b => b.id === activeButton) || buttonData[0];
@@ -137,7 +155,7 @@ const InteractiveSVGButtons = () => {
               <div className={styles.imageWrapper2}>
               <Image
                 className={styles.image2}
-                src={buttonData.find(b => b.id === activeButton)?.image || ''}
+                src={buttonData.find(b => b.id === activeButton)?.image2 || ''}
                 alt={activeButtonData.title}
                 sizes="(max-width: 768px) 100vw, 50vw"
               />

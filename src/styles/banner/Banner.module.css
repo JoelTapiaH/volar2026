@@ -14,6 +14,7 @@
     color: black;
     /*gap: 5em;*/
     padding: 4em 0;
+    gap: 1em;
 }
 .container > img {
     object-fit: cover;
@@ -31,4 +32,14 @@
     font-weight: 550;
     font-size: clamp(11px, 2em, 22px);
     margin: 1em 0;
+}
+@media (max-width: 880px) {
+.container > img {
+    width: 250px;
+}
+}
+@media (max-width: 600px) {
+.container {
+    flex-direction: column;
+}
 }

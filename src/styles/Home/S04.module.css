@@ -13,7 +13,7 @@
     z-index: 1; /* AAAAAAAAAA Asegúrate de que este valor sea menor que el z-index del dropdown */
     color: black;
     /*gap: 5em;*/
-    padding: 2.5em 0 6em 0;
+    padding: 2.5em 2.5em 6em 2.5em;
 }
 .container > h1 {
     display: flex;
@@ -44,4 +44,20 @@
     width: 390px;
 }
 
+.image{
+    margin-left: 1em;
+}
 
+@media (max-width: 510px) {
+.container > h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.image{
+    margin-left: 0;
+    margin-top: 0.5em;
+    width: 150px;
+    height: 60px;
+}
+}

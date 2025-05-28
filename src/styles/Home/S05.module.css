@@ -13,7 +13,7 @@
     z-index: 1; /* AAAAAAAAAA Asegúrate de que este valor sea menor que el z-index del dropdown */
     color: black;
     /*gap: 5em;*/
-    padding: 4em 0;
+    padding: 4em 2em;
 }
 .container > h1 {
     display: flex;

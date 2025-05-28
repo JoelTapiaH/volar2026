@@ -55,3 +55,13 @@
     position: relative;
     z-index: 1;
 }
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+@media (max-width: 722px) {
+.buttons  {
+    flex-direction: column;
+}
+}

@@ -60,7 +60,11 @@ const SecondBlockChild = styled.div`
       }
     }
     .react-multi-carousel-item {
-      padding: 0 10px;
+      padding: 0 0;
+      width: 100% !important;
+      min-width: 380px !important;
+      margin : 0 2.5em 0 0;
+
     }
   }
   .react-multiple-carousel__arrow--left {
@@ -87,11 +91,12 @@ const CarouselContainer = styled.div`
 `;
 
 const CarouselWrapper = styled.div`
-  width: 85%;
+  width: 100%;
   overflow: hidden;
 `;
 
 const ArrowButton = styled.button`
+display: none;
   background: none;
   border: none;
   cursor: pointer;
@@ -113,17 +118,17 @@ const ArrowButton = styled.button`
 
 const responsive = {
   desktop: {
-    breakpoint: { max: 3000, min: 1024 },
+    breakpoint: { max: 3000, min: 1400 },
     items: 3,
-    slidesToSlide: 1,
+    slidesToSlide: 3,
   },
   tablet: {
-    breakpoint: { max: 1024, min: 600 },
+    breakpoint: { max: 1300, min: 780 },
     items: 2,
     slidesToSlide: 2,
   },
   mobile: {
-    breakpoint: { max: 600, min: 0 },
+    breakpoint: { max: 780, min: 0 },
     items: 1,
     slidesToSlide: 1,
   },
@@ -152,7 +157,7 @@ export const SliderTestimonials = ({ id }: TestimonialProps) => {
   };
 
   return (
-    <section id={id} >
+    <section id={id} style={{width:'100%', overflow:'hidden'}}>
     <SecondBlockChild>
       <CarouselContainer>
         <ArrowButton

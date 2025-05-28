@@ -30,7 +30,7 @@ export default function S04_Clients() {
           alt="Logo Volar" 
           width={200}
           height={80}
-          style={{ marginLeft: "1em" }}
+          className={styles.image}
         />
       </h1>
 
