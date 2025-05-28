@@ -73,3 +73,23 @@
 .modalBody {
   line-height: 1.6;
 }
+
+@media (max-width:699px) {
+.svgWrapper > svg{
+ width: 400px;
+ height: 280px;
+ overflow: visible;
+}
+}
+@media (max-width:389px) {
+.svgWrapper > svg{
+ width: 350px;
+ overflow: visible;
+}
+}
+@media (max-width:330px) {
+.svgWrapper > svg{
+ width: 300px;
+ overflow: visible;
+}
+}
