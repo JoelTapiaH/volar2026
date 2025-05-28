@@ -96,11 +96,11 @@ export default function FlowerComplete() {
 </svg>
 </div>
 
-{hovered && (
+{/*hovered && (
         <div className={styles.tooltip}>
           <div text={petalsData.find((_, i) => petals[i].key === hovered)?.p1Text || ""} style={{color:'#242365'}}/>
         </div>
-      )}
+      )*/}
 
         </div>
     );
