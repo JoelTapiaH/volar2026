@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "@/styles/Learn/Dimensions.module.css";
 import useContentful from "../../../utils/useContentful";
 import ColorContentful from "../../../utils/TurqContentful";
@@ -9,6 +9,7 @@ const Petal3ID = "55MBubVyiqahUXx1LweTZ0";
 
 export default function Dimension3() {
     const { data } = useContentful({ id: Petal3ID });
+    const [selectedInfography, setSelectedInfography] = useState<string | null>(null);
 
     if (!data || !(data as any).fields) {
     return null;
@@ -20,7 +21,13 @@ export default function Dimension3() {
     const textButton = data.fields.p1Button.fields.buttonText;
     const colorButton = data.fields.p1Button.fields.buttonColor;
 
-    console.log('ERERE',p1Paragraph)
+    const handleAdviceClick = (infography: string) => {
+        setSelectedInfography(infography);
+    };
+
+    const closeModal = () => {
+        setSelectedInfography(null);
+    };
     return (
         <div className={styles.container} >
             <div className={styles.heading} style={{backgroundColor: p1Color}}>
@@ -41,29 +48,31 @@ export default function Dimension3() {
                 {ColorContentful(p1Paragraph)}
                 </div>
                 
-                {p1Boxes &&
-                <div className={styles.boxes}>
-                {p1Boxes &&
-            p1Boxes.map((card:any, index:number) => {
-                const title = card.fields.adviceTitle;
-                const age = card.fields.adviceAge;
-                const tag = card.fields.adviceTag;
-                const imgUrl = card.fields.adviceImg.fields.file.url;
-                const color = card.fields.adviceColor;
-
-                return (
-                <Advice
-                    key={index}
-                    text={title}
-                    age={age}
-                    tag={tag}
-                    img={imgUrl}
-                    color={color}
-                />
-                
-                );
-            })}
-            </div>}
+                {p1Boxes && (
+                    <div className={styles.boxes}>
+                        {p1Boxes.map((card: any, index: number) => {
+                            const title = card.fields.adviceTitle;
+                            const age = card.fields.adviceAge;
+                            const tag = card.fields.adviceTag;
+                            const imgUrl = card.fields.adviceImg.fields.file.url;
+                            const color = card.fields.adviceColor;
+                            const infography = card.fields.adviceInfoImg.fields.file.url;
+                            
+                            return (
+                                <Advice
+                                    key={index}
+                                    text={title}
+                                    age={age}
+                                    tag={tag}
+                                    img={imgUrl}
+                                    color={color}
+                                    infography={infography}
+                                    onClick={() => handleAdviceClick(infography)}
+                                />
+                            );
+                        })}
+                    </div>
+                )}
                 <div className={styles.message}>
                 <TextBreak>{p1Message}</TextBreak>
                 </div>
@@ -72,6 +81,22 @@ export default function Dimension3() {
                 </a>
 
             </div>
+                        {/* Modal para mostrar la infografía */}
+            {selectedInfography && (
+                <div className={styles.modalOverlay} onClick={closeModal}>
+                    <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+                        <button className={styles.closeButton} onClick={closeModal}>
+                            &times;
+                        </button>
+                        <img 
+                            src={`https:${selectedInfography}`} 
+                            alt="Infografía" 
+                            className={styles.infographyImage}
+                        />
+                    </div>
+                </div>
+            )}
+
         </div>
             );
 }

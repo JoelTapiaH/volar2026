@@ -28,7 +28,6 @@ export default function Dimension1() {
         setSelectedInfography(null);
     };
 
-    console.log('ERERE',p1Paragraph)
     return (
         <div className={styles.container} >
             <div className={styles.heading} style={{backgroundColor: p1Color}}>
