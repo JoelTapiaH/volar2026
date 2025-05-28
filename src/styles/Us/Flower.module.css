@@ -10,10 +10,66 @@
 
 .tooltip {
   max-width: 200px;
-  background-color: #fff;
+  background-color: #941313;
   border: 1px solid #ccc;
   padding: 12px;
   border-radius: 8px;
   color: #242365;
   font-size: 14px;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 50px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modalHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.modalHeader h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.modalIcon {
+  max-width: 100px;
+  max-height: 100px;
+  margin-bottom: 1rem;
+}
+
+.modalBody {
+  line-height: 1.6;
 }
