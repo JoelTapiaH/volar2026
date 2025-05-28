@@ -60,11 +60,7 @@ const SecondBlockChild = styled.div`
       }
     }
     .react-multi-carousel-item {
-      padding: 0 0;
-      width: 100% !important;
-      min-width: 380px !important;
-      margin : 0 2.5em 0 0;
-
+      padding: 0 10px;
     }
   }
   .react-multiple-carousel__arrow--left {
@@ -86,12 +82,12 @@ const SecondBlockChild = styled.div`
 const CarouselContainer = styled.div`
   display: flex;
   align-items: center;
-  width: 1440px;
+  width: 100%;
   justify-content: center;
 `;
 
 const CarouselWrapper = styled.div`
-  width: 100%;
+  width: 85%;
   overflow: hidden;
 `;
 
@@ -118,17 +114,17 @@ display: none;
 
 const responsive = {
   desktop: {
-    breakpoint: { max: 3000, min: 1400 },
+    breakpoint: { max: 3000, min: 1024 },
     items: 3,
-    slidesToSlide: 3,
+    slidesToSlide: 1,
   },
   tablet: {
-    breakpoint: { max: 1300, min: 780 },
+    breakpoint: { max: 1024, min: 900 },
     items: 2,
     slidesToSlide: 2,
   },
   mobile: {
-    breakpoint: { max: 780, min: 0 },
+    breakpoint: { max: 900, min: 0 },
     items: 1,
     slidesToSlide: 1,
   },

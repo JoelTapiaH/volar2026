@@ -5,15 +5,15 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 1440px;
     height: 100%;
     min-height: 42vh;
     background-color: var(--background);
     position: relative;
     z-index: 1; /* AAAAAAAAAA Asegúrate de que este valor sea menor que el z-index del dropdown */
     color: black;
-    /*gap: 5em;*/
-    padding: 4em 2em;
+    /*gap: 5em;
+    padding: 4em 2em;*/
+    padding: 4em 0;
 }
 .container > h1 {
     display: flex;
@@ -50,4 +50,10 @@ left: -20px;
 }
 .job{
     font-weight: 300;
+}
+
+@media (max-width: 450px) {
+    .container {
+        padding: 2em 0;
+    }
 }
