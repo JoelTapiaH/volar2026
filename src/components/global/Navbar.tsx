@@ -32,6 +32,18 @@ export default function Navbar() {
            (path === '/publicaciones' && activeLink.startsWith('/publicaciones'));
   };
 
+  // Función para toggle del dropdown ( móvil y desktop)
+  const toggleProyectosDropdown = () => {
+    setShowPublicacionesDropdown(!showPublicacionesDropdown);
+  };
+
+  // Cerrar dropdown cuando se cierra el menú hamburguesa
+  useEffect(() => {
+    if (!isMenuOpen) {
+      setShowPublicacionesDropdown(false);
+    }
+  }, [isMenuOpen]);
+
   return (
     <div style={{display:'flex', flexDirection:'column', justifyContent:'center'}}>
       <div className={styles.logo}>
@@ -68,32 +80,9 @@ export default function Navbar() {
             >
               NOSOTROS
             </a>
+              
 
-            <div
-              className={styles.dropdown}
-              onMouseEnter={() => setShowPublicacionesDropdown(true)}
-              onMouseLeave={() => setShowPublicacionesDropdown(false)}
-            >
-              <p 
-                className={`${styles.mainLink} ${isActive('/publicaciones') ? styles.active : ''}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleLinkClick('/publicaciones');
-                }}
-                style={{ width: "150px" }}
-              >
-                PROYECTOS
-              </p>
-              {showPublicacionesDropdown && (
-                <div className={styles.dropdownContent}>
-                  <a href="/publicaciones/articulos" className={styles.secondLink}>Alianzas</a>
-                  <a href="/publicaciones/contenido" className={styles.secondLink}>Volar Colaboradores</a>
-                  <a href="/publicaciones/medios" className={styles.secondLink}>Volar en Comunidades</a>
-                  <a href="/publicaciones/medios" className={styles.secondLink}>Piloto Volar Cuna</a>
-                </div>
-              )}
-            </div>
-
+                
             <a 
               href="/aprendamos/aprendamos" 
               className={`${styles.mainLink} ${isActive('/aprendamos/aprendamos') ? styles.active : ''}`}

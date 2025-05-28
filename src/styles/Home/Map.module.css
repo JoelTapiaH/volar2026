@@ -4,16 +4,18 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 32px;
-    padding: 0;
-    margin-top: 4em;
+    padding: 0 3em;
+    margin-top: 6em;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
 }
 .contentContainer1 {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: flex-start;
-    width: 33%;
+    width: 34%;
     position: relative;
     opacity: 1;
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
@@ -21,7 +23,7 @@
 .svgContainer {
     display: flex;
     justify-content: center;
-    width: 33%;
+    width: 28%;
 }
 .title {
     font-size: 50px;
@@ -41,6 +43,7 @@
     text-align: left;
     padding: 1em 0 1em 0;
     color: var(--grey);
+    width: 90%;
 }
 .info {
     width: 85%;
@@ -77,7 +80,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: flex-end;
-    width: 33%;
+    width: 34%;
     position: relative;
     margin-top: auto;
     opacity: 1;
@@ -125,12 +128,13 @@
 }
 .imageWrapper2 {
     position: relative;
-    width: 380px;
+    width: 90%;
     height: auto;
     display: flex;
     justify-content: left;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .image2 {
     width: 90%;
@@ -150,5 +154,112 @@
     width: 90%;
 }
 
+@media (max-width: 1440px) {
 
+.imgDescription ,.imgDescription2 {
+font-size: 14px;
+}
 
+}
+
+@media (max-width: 1250px) {
+.contentContainer1  {
+    width: 50%;
+}
+.contentContainer2 {
+    width: 100%;
+    flex-direction: row;
+    margin-left: 5.5em;
+    align-items: center;
+}
+.svgContainer {
+    width: 45%;
+}
+.imageWrapper2{
+    width: 50%;
+}
+}
+
+@media (max-width: 850px) {
+.container {
+    gap: 3em;
+
+}
+.contentContainer1  {
+    width: 100%;
+}
+.info {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+}
+.text {
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+.imageBox {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.contentContainer2 {
+    width: 100%;
+    margin-left: 0;
+}
+.imageWrapper2 {
+    width: 70%;
+}
+.svgContainer {
+    width: 100%;
+}
+}
+
+@media (max-width: 749px) {
+.container {
+    gap: 3em;
+    padding: 0 1em;
+}
+.contentContainer1  {
+    width: 100%;
+}
+.info {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+.text {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.imageBox {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.contentContainer2 {
+    width: 100%;
+    flex-direction: column;
+    margin-left: 0;
+}
+.imageWrapper2 {
+    width: 70%;
+}
+.svgContainer {
+    width: 100%;
+}
+}
+@media (max-width: 500px) {
+.imageBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.imageWrapper2 {
+    width: 90%;
+}
+}

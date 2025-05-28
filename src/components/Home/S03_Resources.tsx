@@ -45,7 +45,7 @@ export default function S03_Resources() {
           <a className={styles.styledButton} style={{backgroundColor:colorButton}} href="#"><span>{textButton}</span></a>
         </div>
 
-        <div>
+        <div className={styles.animationContainer}>
             <div className={styles.animation}          >
             <div 
               style={{backgroundColor:homeColorSmall}} 

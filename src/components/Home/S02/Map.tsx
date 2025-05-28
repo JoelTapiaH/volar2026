@@ -23,10 +23,10 @@ const InteractiveSVGButtons = () => {
   const buttonData = [
     { id: 1, title: 'PIURA', year: '201X', image: foto, position: { cx: 21.5, cy: 21.5 }, text: 'Taciti 1 hac senectus convallis malesuada torquent quis vivamus'},
     { id: 2, title: 'LAMBAYEQUE', year: '2012',image: foto1, position: { cx: 37.5, cy: 65.5 }, text: 'Taciti 2hac senectus convallis malesuada torquent quis vivamus' },
-    { id: 3, title: 'SAN MARTIN', year: '2019',image: foto2, position: { cx: 128.5, cy: 82.5 }, text: 'Taciti3 hac senectus convallis malesuada torquent quis vivamus' },
-    { id: 4, title: 'LIMA', year: '2010',image: foto3, position: { cx: 128.5, cy: 217.5 }, text: 'Taciti 4hac senectus convallis malesuada torquent quis vivamus' },
+    { id: 3, title: 'SAN MARTIN', year: '2024',image: foto2, position: { cx: 128.5, cy: 82.5 }, text: 'Taciti3 hac senectus convallis malesuada torquent quis vivamus' },
+    { id: 4, title: 'LIMA', year: '2023',image: foto3, position: { cx: 128.5, cy: 217.5 }, text: 'Taciti 4hac senectus convallis malesuada torquent quis vivamus' },
     { id: 5, title: 'JUNÍN', year: '2018',image: foto1, position: { cx: 180.5, cy: 209.5 }, text: 'Taciti 5hac senectus convallis malesuada torquent quis vivamus' },
-    { id: 6, title: 'CUZCO', year: '2015',image: foto2, position: { cx: 259.5, cy: 258.5 }, text: 'Taciti 6hac senectus convallis malesuada torquent quis vivamus' },
+    { id: 6, title: 'CUSCO', year: '2024',image: foto2, position: { cx: 259.5, cy: 258.5 }, text: 'Taciti 6hac senectus convallis malesuada torquent quis vivamus' },
     { id: 7, title: 'PUNO', year: '2011',image: foto3, position: { cx: 323.5, cy: 314.5 }, text: 'Taciti 7hac senectus convallis malesuada torquent quis vivamus' },
     { id: 8, title: 'AREQUIPA', year: '201Y',image: foto1, position: { cx: 255.5, cy: 344.5 }, text: 'Taciti hac 8senectus convallis malesuada torquent quis vivamus' },
   ];
@@ -47,6 +47,7 @@ const InteractiveSVGButtons = () => {
               {buttonData.find(b => b.id === activeButton)?.text || ''}
               </div>
 
+              <div className={styles.imageBox}>
               <div className={styles.imageWrapper1}>
               <Image
                 className={styles.image1}
@@ -56,7 +57,7 @@ const InteractiveSVGButtons = () => {
               />
               </div>
               <div className={styles.imgDescription}>Lorem description foto LPDC 2022</div>
-
+              </div>
             </div>
           </div>
 

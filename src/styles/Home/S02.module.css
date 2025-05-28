@@ -22,12 +22,15 @@
     justify-content: space-evenly;
     width: 80%;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 2em;
 }
 .metric {
     display: flex;
     flex-direction: row;
     align-items: center;
     text-align: center;
+    width: 230px;
 }
 .icon {
     padding: 1em;
@@ -60,7 +63,7 @@
     text-align: left;
     line-height: 1.2em;
     width: 70%;
-    max-width: 250px;
+    width: 180px;
     transition: transform 0.5 ease-in;
     text-transform: uppercase;
 }
@@ -92,4 +95,10 @@
 
 .metric:hover .staticCheck {
     display: none;
+}
+
+@media (max-width:946px) {
+    .metrics {
+        gap:4em ;
+    }
 }
