@@ -23,7 +23,7 @@ export default function S04_Clients() {
 
   return (
     <div className={styles.container}>
-      <h1 style={{ display: "flex", alignItems: "flex-end" }}>
+      <h1>
         {homeTitleS04}
         <Image 
           src={logo} 

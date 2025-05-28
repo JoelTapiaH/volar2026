@@ -22,6 +22,7 @@ export default function Navbar() {
 
   const handleLinkClick = (path: string) => {
     setActiveLink(path);
+    setIsMenuOpen(false);
     router.push(path);
   };
 

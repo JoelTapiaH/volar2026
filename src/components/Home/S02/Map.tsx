@@ -36,14 +36,15 @@ const InteractiveSVGButtons = () => {
   return (
     <div className={styles.container}>
           {/* Content Section1 */}
-          <div className={styles.contentContainer1}>
+          <div key={`content1-${activeButton}`}
+        className={`${styles.contentContainer1} ${styles.fadeIn}`}>
               <div className={styles.title}>
                 <img src={decoration.src}/>
-                {buttonData.find(b => b.id === activeButton)?.title}
+                {buttonData.find(b => b.id === activeButton)?.title || ''}
               </div>
             <div className={styles.info}>
               <div className={styles.text}>
-              {buttonData.find(b => b.id === activeButton)?.text}
+              {buttonData.find(b => b.id === activeButton)?.text || ''}
               </div>
 
               <div className={styles.imageWrapper1}>
@@ -97,21 +98,29 @@ const InteractiveSVGButtons = () => {
                         cx={button.position.cx + 7.00} 
                         cy={button.position.cy + 125.00} 
                         r="17.5" 
-                        fill={activeButton === button.id ? '#FF0000' : '#F7B919'} 
+                        fill={activeButton === button.id ? '#F41B5E' : '#F7B919'} 
                         fillOpacity="0.25"
-                      />
+                        >
+                          <animate 
+                          attributeName="r" 
+                          values="20;20;15" 
+                          dur="1.5s" 
+                          repeatCount="indefinite" 
+                          />
+                      </circle>
+                      
                       <circle 
                         cx={button.position.cx + 7.389} 
                         cy={button.position.cy + 125.389} 
                         r="11.6667" 
-                        fill={activeButton === button.id ? '#FF0000' : '#F7B919'} 
+                        fill={activeButton === button.id ? '#F41B5E' : '#F7B919'} 
                         fillOpacity="0.5"
                       />
                       <circle 
                         cx={button.position.cx + 7.389} 
                         cy={button.position.cy + 125.389} 
                         r="4.69444" 
-                        fill={activeButton === button.id ? '#FF0000' : '#F7B919'} 
+                        fill={activeButton === button.id ? '#F41B5E' : '#F7B919'} 
                         stroke="white" 
                         strokeWidth="1.5"
                       />
@@ -122,7 +131,8 @@ const InteractiveSVGButtons = () => {
           </div>
 
           {/* Content Section2 */}
-          <div className={styles.contentContainer2}>
+          <div key={`content2-${activeButton}`}
+        className={`${styles.contentContainer2} ${styles.fadeIn}`}>
               <div className={styles.imageWrapper2}>
               <Image
                 className={styles.image2}

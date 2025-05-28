@@ -37,7 +37,7 @@ export default function S01_Items() {
                   </div>
 
                   <div className={styles.description}>
-                    {text}
+                    <TextBreak>{text}</TextBreak>
                   </div>
                   
                   {/* Elemento para los puntitos animados */}
