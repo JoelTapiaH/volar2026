@@ -132,6 +132,22 @@
     width: 40px;
 }
 
+
+
+
+.petalBackground {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    display: flex;
+    margin-right: 1em;
+}
+.imgDimension{
+    width: 100%;
+    object-fit: contain;
+}
+
+
 @media (max-width:790px) {
     .paragraph {
     width: 70%;
@@ -139,11 +155,22 @@
     line-height: 1.5;
 }
 .content {
-
     font-size: clamp(11px, 2em, 18px);
 }
 }
-
+@media (max-width:730px) {
+.heading {
+    display: flex;
+    font-size: clamp(11px, 3em, 35px);
+}
+.petalBackground {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    display: flex;
+    margin-right: 1em;
+}
+}
 @media (max-width:610px) {
 .heading {
     display: flex;
@@ -153,29 +180,12 @@
     flex-direction: column;
     text-align: center;
 }
-.petal,.petal2,.petal4 {
+.petalBackground {
     margin-right: 0.5em;
     height: 100px;
     margin-bottom: 1em;
 }
-.petal {
-    width: 150px;
-}
-.petal2 {
-    width: 150px;
-}
-.petal4 {
-    width: 120px;
-}
-.img1 {
-    width: 30px;
-}
-.img2 {
-    width: 40px;
-}
-.img3 {
-    width: 30px;
-}
+
 .paragraph {
     width: 50%;
     margin: 2em 0;

@@ -31,70 +31,9 @@
     justify-content: center;
     align-items: center;
     width: 150px;
-        height: 167px;
+    height: 167px;
+}
 
-}
-.petal5 {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 135px;
-            height: 167px;
-
-}
-.petal4 {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 165px;
-            height: 167px;
-
-}
-.petal3 {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 140px;
-            height: 167px;
-
-}
-.img1 {
-    position: absolute;
-    object-fit: contain;
-    right: 1.5em;
-    top: 3.5em;
-}
-.img2 {
-    position: absolute;
-    object-fit: contain;
-    right: 1.3em;
-    top: 1.8em;
-}
-.img3 {
-    position: absolute;
-    object-fit: contain;
-    right: 2em;
-    top: 2em;
-}
-.img4 {
-    position: absolute;
-    object-fit: contain;
-    right: 3.1em;
-    top: 2.3em;
-    max-width: 65px;
-}
-.img5 {
-    position: absolute;
-    object-fit: contain;
-    right: 2.3em;
-    top: 2.8em;
-}
-.img6 {
-    position: absolute;
-    object-fit: contain;
-    right: 3em;
-    top: 2.5em;
+.img {
+    object-fit: cover;
 }

@@ -39,14 +39,14 @@ const InteractiveSVGButtons = () => {
   const [activeButton, setActiveButton] = useState<number>(1); // Inicia con el botón 1 seleccionado
 
   const buttonData = [
-    { id: 1, title: 'PIURA', year: '201X', image: PIU1, image2: PIU2, position: { cx: 21.5, cy: 21.5 }, text: 'Taciti 1 hac senectus convallis malesuada torquent quis vivamus'},
-    { id: 2, title: 'LAMBAYEQUE', year: '2012',image: LAM1, image2: LAM2,position: { cx: 37.5, cy: 65.5 }, text: 'Taciti 2hac senectus convallis malesuada torquent quis vivamus' },
-    { id: 3, title: 'SAN MARTIN', year: '2024',image: SMP1, image2: SMP2,position: { cx: 128.5, cy: 82.5 }, text: 'Taciti3 hac senectus convallis malesuada torquent quis vivamus' },
-    { id: 4, title: 'LIMA', year: '2023',image: LIMA1, image2: LIMA2,position: { cx: 128.5, cy: 217.5 }, text: 'Taciti 4hac senectus convallis malesuada torquent quis vivamus' },
-    { id: 5, title: 'JUNÍN', year: '2018',image: JUN1, image2: JUN2,position: { cx: 180.5, cy: 209.5 }, text: 'Taciti 5hac senectus convallis malesuada torquent quis vivamus' },
-    { id: 6, title: 'CUSCO', year: '2024',image: CUS1, image2: CUS2,position: { cx: 259.5, cy: 258.5 }, text: 'Taciti 6hac senectus convallis malesuada torquent quis vivamus' },
-    { id: 7, title: 'PUNO', year: '2011',image: PUNO1, image2: PUNO2,position: { cx: 323.5, cy: 314.5 }, text: 'Taciti 7hac senectus convallis malesuada torquent quis vivamus' },
-    { id: 8, title: 'AREQUIPA', year: '201Y',image: ARQ1, image2: ARQ2, position: { cx: 255.5, cy: 344.5 }, text: 'Taciti hac 8senectus convallis malesuada torquent quis vivamus' },
+    { id: 1, title: 'PIURA', year: '201X', image: PIU1, image2: PIU2, position: { cx: 21.5, cy: 21.5 }, text: 'Impacto del Piloto Volar Cuna', des1:'', des2:''},
+    { id: 2, title: 'LAMBAYEQUE', year: '2012',image: LAM1, image2: LAM2,position: { cx: 37.5, cy: 65.5 }, text: 'Impacto del Piloto Volar Cuna', des1:'Descargando la app Volar', des2:'Taller "Yo también puedo"' },
+    { id: 3, title: 'SAN MARTIN', year: '2024',image: SMP1, image2: SMP2,position: { cx: 128.5, cy: 82.5 }, text: 'Impacto en alianza con Cementos Selva', des1:'Cesión de uso de recursos', des2:'' },
+    { id: 4, title: 'LIMA', year: '2023',image: LIMA1, image2: LIMA2,position: { cx: 128.5, cy: 217.5 }, text: 'Impacto de Volar en Colaboradores y el Piloto Volar Cuna', des1:'Campaña de tamizaje de anemia en RIMAC', des2:'Taller "Mis primeros 5"' },
+    { id: 5, title: 'JUNÍN', year: '2018',image: JUN1, image2: JUN2,position: { cx: 180.5, cy: 209.5 }, text: 'Impacto del Piloto Volar Cuna', des1:'', des2:'' },
+    { id: 6, title: 'CUSCO', year: '2024',image: CUS1, image2: CUS2,position: { cx: 259.5, cy: 258.5 }, text: 'Impacto de Volar en Comunidades y el Piloto Volar Cuna', des1:'Taller con FNAI', des2:'Taller "Mis primeros 5"' },
+    { id: 7, title: 'PUNO', year: '2011',image: PUNO1, image2: PUNO2,position: { cx: 323.5, cy: 314.5 }, text: 'Impacto de Volar en Colaboradores y Volar en Comunidades', des1:'Taller "Juguemos en familia"', des2:'Trabajo en comunidad' },
+    { id: 8, title: 'AREQUIPA', year: '201Y',image: ARQ1, image2: ARQ2, position: { cx: 255.5, cy: 344.5 }, text: 'Impacto del Piloto Volar Cuna', des1:'Taller "Mis primeros 5"', des2:'Profundizando en el desarrollo cerebral' },
   ];
 
     const activeButtonData = buttonData.find(b => b.id === activeButton) || buttonData[0];
@@ -74,7 +74,9 @@ const InteractiveSVGButtons = () => {
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               </div>
-              <div className={styles.imgDescription}>Lorem description foto LPDC 2022</div>
+              <div className={styles.imgDescription}>
+                {buttonData.find(b => b.id === activeButton)?.des1 || ''}
+              </div>
               </div>
             </div>
           </div>
@@ -160,7 +162,9 @@ const InteractiveSVGButtons = () => {
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
 
-              <div className={styles.imgDescription2}>Lorem description foto LPDC 2022</div>
+              <div className={styles.imgDescription2}>
+                {buttonData.find(b => b.id === activeButton)?.des2 || ''}
+              </div>
             
               </div>
               <div className={styles.yearContainer}>
