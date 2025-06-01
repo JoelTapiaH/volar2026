@@ -47,8 +47,6 @@ export default function Hero() {
         const { heroText, heroImg } = (data as any).fields;
           const image = heroImg.fields.file.url;
 
-console.log('TRICS', data)
-
         return (
     <div className={styles.container}>
       <CustomCursor/>
@@ -68,7 +66,7 @@ console.log('TRICS', data)
 
             </div>
 
-            <a className={styles.styledButton} href="#"><span>¡Entérate más!</span></a>
+            <a className={styles.styledButton} href="/nosotros" ><span>¡Entérate más!</span></a>
       </div>
 
       <div className={styles.imgContainer}>

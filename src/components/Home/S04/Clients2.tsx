@@ -144,7 +144,6 @@ export default function Clients2() {
                 >
                   {homeLogos2.map((image: any, index:number) => {
                     const imageUrl = `https:${image.fields.file.url}`;
-                    console.log(`Imagen ${index}:`, imageUrl); // Debug
                     
                     return (
                       <div key={`${image.fields.title}-${index}`}>

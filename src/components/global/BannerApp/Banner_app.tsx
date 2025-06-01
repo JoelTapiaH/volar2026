@@ -13,7 +13,6 @@ export default function Banner_app() {
     if (!data || !(data as any).fields) {
       return null;
     }
-    console.log ('ASOX', data)
     const { bannerText, bannerImg } = (data as any).fields;
     const image = data.fields.bannerImg.fields.file.url;
     return (

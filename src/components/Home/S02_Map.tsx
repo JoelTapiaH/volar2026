@@ -14,7 +14,6 @@ export default function S02_Map() {
     }
 
     const { homeTitleS02, homeMetrics } = (data as any).fields;
-    console.log('sx', data)
     return (
       <div className={styles.container}>
         

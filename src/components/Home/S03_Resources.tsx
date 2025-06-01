@@ -42,7 +42,7 @@ export default function S03_Resources() {
             <div className={styles.text2}>{homeTextS03P2}</div>
             <div className={styles.text3}>{homeTextS03P3}</div>
           </div>
-          <a className={styles.styledButton} style={{backgroundColor:colorButton}} href="#"><span>{textButton}</span></a>
+          <a className={styles.styledButton} style={{backgroundColor:colorButton}} href="/aprendamos/aprendamos"><span>{textButton}</span></a>
         </div>
 
         <div className={styles.animationContainer}>

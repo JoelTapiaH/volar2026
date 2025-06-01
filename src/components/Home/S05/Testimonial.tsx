@@ -18,11 +18,11 @@ const Testimonial: React.FC<TestimonialProps> = ({ color, img, text, position, a
 
         <div className={styles.testimonialContainer} style={{backgroundColor: rgbaColor}}>
           <div className={styles.richText}>
-                    <p className={styles.richTextSon}>{PurpleContentful(text)}</p>
+                    <div className={styles.richTextSon}>{PurpleContentful(text)}</div>
           </div>
           
           <div className={styles.info}>
-                    <div>{author}</div>
+                    <div style={{lineHeight:'1', textTransform:'capitalize', marginBottom:'0.2em'}}>{author}</div>
                     <div className={styles.position}>{position}</div>
           </div>
 

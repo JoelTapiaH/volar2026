@@ -26,7 +26,6 @@ export default function FlowerParts() {
         !response5.data.fields || !response6.data.fields) {
         return null;
     }
-console.log('RES', response1)
     // Nombres
     const p1Name = response1.data.fields.p1Name;
     const p2Name = response2.data.fields.p1Name;

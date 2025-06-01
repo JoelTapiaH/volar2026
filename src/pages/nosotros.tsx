@@ -40,7 +40,6 @@ export default function Nosotros() {
     const TimeTitle = response1.data.fields.usTimeLineTitle;
     const AllianceTitle = response1.data.fields.usAlliancesTitle;
 
-    console.log('coookie',response1)
     return (
         <div className={styles.container}>
             <div className={styles.heading}>

@@ -149,23 +149,24 @@ export default function FlowerComplete() {
       {/* Modal */}
       {selectedPetal && (
         <div className={styles.modalOverlay} onClick={closeModal}>
-          <div className={styles.modalContent} onClick={e => e.stopPropagation()} style={{backgroundColor:selectedPetal.p1Color}}>
-            <button className={styles.closeButton} onClick={closeModal}>
+          <div className={styles.modalContent} onClick={e => e.stopPropagation()} >
+            <button className={styles.closeButton} onClick={closeModal} style={{color:'#242365'}}>
               &times;
             </button>
             <div className={styles.modalHeader} >
-              <h2 style={{color:'white', fontWeight:450}}>
-                <TextBreak>{selectedPetal.p1Title}</TextBreak>
-                </h2>
-              {selectedPetal.p1Icon && (
+                            {selectedPetal.p1Icon && (
                 <img 
                   src={`https:${selectedPetal.p1Icon.fields.file.url}`} 
                   alt={selectedPetal.p1Title}
                   className={styles.modalIcon}
                 />
               )}
+              <h2 style={{color:selectedPetal.p1Color, fontWeight:550, marginLeft:'1em'}}>
+                <TextBreak>{selectedPetal.p1Title}</TextBreak>
+                </h2>
+
             </div>
-            <div className={styles.modalBody} style={{color:'white', textAlign:'center'}}>
+            <div className={styles.modalBody} style={{color:selectedPetal.p1Color, textAlign:'center'}}>
               {selectedPetal.p1Text} 
             </div>
           </div>

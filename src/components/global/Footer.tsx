@@ -45,7 +45,6 @@ export default function Footer() {
     if (!data || !(data as any).fields) {
       return null;
     }
-    console.log('x', data)
     const { contactIG, contactFB, contactYT, contactMail, contactAddress, contactTerms, contactLogo, contactBreca } = (data as any).fields;
     const logo = data.fields.contactLogo.fields.file.url;
     const logoBreca = data.fields.contactBreca.fields.file.url;

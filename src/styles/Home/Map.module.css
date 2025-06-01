@@ -79,7 +79,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     width: 34%;
     position: relative;
     margin-top: auto;
@@ -117,7 +117,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    width: 50%;
+    width: 100%;
     line-height: 1.1;
     text-align: center;
     justify-content: center;
@@ -276,4 +276,9 @@ font-size: 14px;
 .title {
     font-size: 30px;
 }
+}
+
+@media (max-width: 380px) {
+.year {
+    font-size: 30px;}
 }

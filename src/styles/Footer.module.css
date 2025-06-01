@@ -98,6 +98,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform 0.3s ease;
 }
 .socialMedia > a > div{
     position: relative;
@@ -117,6 +118,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: scale(1.07);
+
 }
 .socialMedia > a > div:active {
     /*background: hwb(157 36% 59%);*/

@@ -10,6 +10,7 @@ const Form: React.FC = () => {
     email: '',
     celular: '',
     soy: '',
+    empresa: '',
     mensaje: '',
   });
   const [isLoading, setIsLoading] = useState(false);
@@ -17,7 +18,6 @@ const Form: React.FC = () => {
 
   // Inicializa EmailJS
   useEffect(() => {
-    console.log('CLAVE PUBLICA:', process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
     emailjs.init({
       publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '',
       // Opcional: Desactiva el bloqueo de seguridad local
@@ -52,6 +52,7 @@ const Form: React.FC = () => {
         email: '',
         celular: '',
         soy: '',
+        empresa: '',
         mensaje: '',
       });
 
@@ -66,24 +67,20 @@ const Form: React.FC = () => {
       setIsLoading(false);
     }
   };
-console.log({
-  publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-  serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-  templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-});
+
   return (
     <div className={styles.container}>
       <div className={styles.left}>
-      <svg className={styles.leftCloud} width="128" height="91" viewBox="0 0 128 91" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g clip-path="url(#clip0_1097_126)">
-      <path d="M20.9888 27.0516C8.69225 31.9229 5.13798e-06 43.8778 5.13798e-06 57.8552C5.13798e-06 76.1585 14.9109 91 33.3005 91H128.444C146.834 90.9997 161 80.0708 161 61.7674C159.51 51.7805 155.973 42.6792 143.312 36.9342C143.312 36.9342 140.944 29.0862 136.05 23.591C128.789 15.4368 118.548 14.3613 115.625 14.2088C112.703 14.0564 106.196 14.5558 99.8523 15.9153C92.6515 -1.66135 64.3626 0.0451177 64.3626 0.0451177C46.875 1.75159 30.2994 4.73153 20.9865 27.0073C20.9865 27.792 20.9888 26.3248 20.9888 27.0516Z" fill="#B6E1E1"/>
-      </g>
-      <defs>
-      <clipPath id="clip0_1097_126">
-      <rect width="128" height="91" fill="white"/>
-      </clipPath>
-      </defs>
-      </svg>
+            <svg className={styles.leftCloud} width="128" height="91" viewBox="0 0 128 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1097_126)">
+            <path d="M20.9888 27.0516C8.69225 31.9229 5.13798e-06 43.8778 5.13798e-06 57.8552C5.13798e-06 76.1585 14.9109 91 33.3005 91H128.444C146.834 90.9997 161 80.0708 161 61.7674C159.51 51.7805 155.973 42.6792 143.312 36.9342C143.312 36.9342 140.944 29.0862 136.05 23.591C128.789 15.4368 118.548 14.3613 115.625 14.2088C112.703 14.0564 106.196 14.5558 99.8523 15.9153C92.6515 -1.66135 64.3626 0.0451177 64.3626 0.0451177C46.875 1.75159 30.2994 4.73153 20.9865 27.0073C20.9865 27.792 20.9888 26.3248 20.9888 27.0516Z" fill="#B6E1E1"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_1097_126">
+            <rect width="128" height="91" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>
       </div>
 
       <form className={styles.formContainer} onSubmit={handleSubmit}>
@@ -103,7 +100,7 @@ console.log({
         </div>
 
         <div className={styles.formRow}>
-          <div className={styles.formGroup}>
+          <div className={styles.formGroup2}>
             <label htmlFor="email">E-mail</label>
             <input
               type="email"
@@ -116,7 +113,7 @@ console.log({
             />
           </div>
 
-          <div className={styles.formGroup}>
+          <div className={styles.formGroup2}>
             <label htmlFor="celular">Celular</label>
             <input
               type="tel"
@@ -143,9 +140,25 @@ console.log({
             <option value="" disabled hidden>Escoge tu rol</option>
             <option value="cuidador">Cuidador</option>
             <option value="mamá o papá">Mamá o Papá</option>
+            <option value="empresa">Empresa</option>
           </select>
         </div>
-
+        {formData.soy === 'empresa' && (
+<div className={`${styles.empresaField} ${formData.soy === 'empresa' ? styles.visible : ''}`}>
+  <div className={styles.formGroup}>
+    <label htmlFor="empresa">Nombre de Empresa</label>
+    <input
+      type="text"
+      id="empresa"
+      name="empresa"
+      value={formData.empresa}
+      onChange={handleChange}
+      className={styles.inputBig}
+      required={formData.soy === 'empresa'}
+    />
+  </div>
+</div>
+        )}
         <div className={styles.formGroup}>
           <label htmlFor="mensaje">Mensaje</label>
           <textarea
@@ -181,16 +194,16 @@ console.log({
       </form>
       
       <div className={styles.right}>
-      <svg className={styles.rightCloud} width="128" height="91" viewBox="0 0 128 91" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g clip-path="url(#clip0_1097_127)">
-      <path d="M-12.0112 27.0516C-24.3078 31.9229 -33 43.8778 -33 57.8552C-33 76.1585 -18.0891 91 0.300545 91H95.4442C113.834 90.9997 128 80.0708 128 61.7674C126.51 51.7805 122.973 42.6792 110.312 36.9342C110.312 36.9342 107.944 29.0862 103.05 23.591C95.7888 15.4368 85.5482 14.3613 82.6254 14.2088C79.7026 14.0564 73.1958 14.5558 66.8523 15.9153C59.6515 -1.66135 31.3626 0.0451177 31.3626 0.0451177C13.875 1.75159 -2.70058 4.73153 -12.0135 27.0073C-12.0135 27.792 -12.0112 26.3248 -12.0112 27.0516Z" fill="#B6E1E1"/>
-      </g>
-      <defs>
-      <clipPath id="clip0_1097_127">
-      <rect width="128" height="91" fill="white"/>
-      </clipPath>
-      </defs>
-      </svg>
+            <svg className={styles.rightCloud} width="128" height="91" viewBox="0 0 128 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1097_127)">
+            <path d="M-12.0112 27.0516C-24.3078 31.9229 -33 43.8778 -33 57.8552C-33 76.1585 -18.0891 91 0.300545 91H95.4442C113.834 90.9997 128 80.0708 128 61.7674C126.51 51.7805 122.973 42.6792 110.312 36.9342C110.312 36.9342 107.944 29.0862 103.05 23.591C95.7888 15.4368 85.5482 14.3613 82.6254 14.2088C79.7026 14.0564 73.1958 14.5558 66.8523 15.9153C59.6515 -1.66135 31.3626 0.0451177 31.3626 0.0451177C13.875 1.75159 -2.70058 4.73153 -12.0135 27.0073C-12.0135 27.792 -12.0112 26.3248 -12.0112 27.0516Z" fill="#B6E1E1"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_1097_127">
+            <rect width="128" height="91" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>
       </div>
 
     </div>
