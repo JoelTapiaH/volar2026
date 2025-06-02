@@ -235,6 +235,7 @@ top: 52%;
 @media (min-width:700px) {
     .time{
         width: min-content;
+        overflow-x: auto;
     }
     .timeWrapper2 {
         justify-content: center;
