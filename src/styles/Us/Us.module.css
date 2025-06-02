@@ -165,6 +165,7 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    align-items: center;
 }
 .timeWrapper {
     height: 400px;
@@ -178,16 +179,25 @@
     -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
 }
 
+.timeWrapper2 {
+    position: relative;
+    display: flex;
+    overflow-x: auto; /* Scroll horizontal */
+    overflow-y: hidden; /* Oculta scroll vertical */
+    scrollbar-width: thin; /* Para navegadores modernos */
+    scrollbar-color: var(--turq) transparent; /* Color del scroll */
+    -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+}
 /* Estilos para la barra de scroll */
-.timeWrapper::-webkit-scrollbar {
+.timeWrapper2::-webkit-scrollbar {
     height: 8px;
 }
 
-.timeWrapper::-webkit-scrollbar-track {
+.timeWrapper2::-webkit-scrollbar-track {
     background: transparent;
 }
 
-.timeWrapper::-webkit-scrollbar-thumb {
+.timeWrapper2::-webkit-scrollbar-thumb {
     background-color: var(--turq);
     border-radius: 20px;
 }
@@ -202,6 +212,13 @@
     flex-wrap: wrap;
     padding: 0 2em;
 }
+.time {
+    position: relative;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
 .boxes2 {
     display: flex;
     flex-direction: row;
@@ -211,18 +228,32 @@
     height: 100%;
     min-width: max-content; /* Obliga al contenedor a ser lo suficientemente ancho */
 }
-.dottedLine {
-  height: 2px;
-  width: 40px;
-  background-image: linear-gradient(to right, var(--orange) 50%, transparent 50%);
-  background-size: 8px 2px;
-  background-repeat: repeat-x;
+.motionDiv {
+top: 52%;
 }
+
 @media (min-width:700px) {
-    .timeWrapper {
+    .time{
+        width: min-content;
+    }
+    .timeWrapper2 {
         justify-content: center;
     }
 }
+@media (max-width:860px) {
+    .timeWrapper2 {
+        display: inline-flex;
+    }
+    .motionDiv {
+top: 47%;
+}
+@media (max-width:815px) {
+        .motionDiv {
+top: 43%;
+}
+}
+}
+
 @media (max-width:730px) {
 .fPart1 {
     font-size: clamp(11px, 2em, 20px);
@@ -231,7 +262,11 @@
     font-size: clamp(11px, 2em, 22px);
 }
 }
-
+@media (max-width:700px) {
+    .motionDiv {
+        display: none;
+    }
+}
 @media (max-width:560px) {
 .heading {
     max-width: 300px;

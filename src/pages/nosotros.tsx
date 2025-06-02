@@ -6,6 +6,7 @@ import info from "@/assets/images/info.png";
 import AllianceBox from "@/components/Us/AllianceBox";
 import FlowerComplete from "@/components/Us/FlowerComplete";
 import TimeHito from "@/components/Us/TimeLine";
+import { motion } from 'framer-motion';
 
 const UsID = "3DDx9rJhrxynyHINQcsADs";
 const ContactID= "58imnflvliRZe777xbsxA6";
@@ -75,34 +76,53 @@ export default function Nosotros() {
 
         <div className={styles.timeContainer}>
         <h1>{TimeTitle}</h1>
-        {TimeLine &&
-        <div className={styles.timeWrapper}>
-
-<div className={styles.boxes2}>
-        {TimeLine &&
-            TimeLine.map((card:any, index:number) => {
-                const text = card.fields.hitoTitle;
-                const color = card.fields.hitoColor;
-                const number = card.fields.hitoNumber;
-                const year = card.fields.hitoYear;
-                const icon = card.fields.hitoIcon.fields.file.url;
-
-                return (
-                <TimeHito
-                    key={index}
-                    text={text}
-                    color={color}                    
-                    number={number}
-                    year={year}
-                    icon={icon}
-                />
-
-                );
-            })}
+                {TimeLine &&
+                <div  className={styles.time}>
+                        <motion.div 
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        style={{
+                            position: 'absolute',
+                            height: '4px',
+                            background: 'repeating-linear-gradient(90deg, #F69240, #F69240 5px, transparent 5px, transparent 12px)',
+                            left: 0,
+                            right: 0,
+                            transformOrigin: ' center',
+                            width: '100%',
+                            minWidth:'400px'
+                        }}
+                        className={styles.motionDiv}
+                        />
+                                <div className={styles.timeWrapper2}>
+                                    {TimeLine &&
+                                        TimeLine.map((card:any, index:number) => {
+                                            const text = card.fields.hitoTitle;
+                                            const color = card.fields.hitoColor;
+                                            const number = card.fields.hitoNumber;
+                                            const year = card.fields.hitoYear;
+                                            const icon = card.fields.hitoIcon.fields.file.url;
+                                            return (
+                                        <motion.div
+                                            key={index}
+                                            style={{ margin: '0 20px', flexShrink: 0 }}
+                                            >
+                                            <TimeHito
+                                                key={index}
+                                                text={text}
+                                                color={color}                    
+                                                number={number}
+                                                year={year}
+                                                icon={icon}
+                                            />
+                                        </motion.div>
+                                            );
+                                        })}
+                                </div>
+                </div>
+                }
 </div>
-        </div>
-        }
-</div>
+
+
         <h1>{AllianceTitle}</h1>
         {alliances &&
         <div className={styles.boxes}>
