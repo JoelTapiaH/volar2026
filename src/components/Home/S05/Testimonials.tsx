@@ -115,15 +115,20 @@ display: none;
 `;
 
 const responsive = {
+    desktop1: {
+    breakpoint: { max: 3000, min: 1450 },
+    items: 4,
+    slidesToSlide: 1,
+  },
   desktop: {
-    breakpoint: { max: 3000, min: 1170 },
+    breakpoint: { max: 1450, min: 1170 },
     items: 3,
     slidesToSlide: 1,
   },
   tablet: {
     breakpoint: { max: 1170, min: 800 },
     items: 2,
-    slidesToSlide: 2,
+    slidesToSlide: 1,
   },
   mobile: {
     breakpoint: { max: 800, min: 0 },

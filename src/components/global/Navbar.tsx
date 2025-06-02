@@ -114,7 +114,7 @@ export default function Navbar() {
                   <a href="/proyectos/proyecto4" className={styles.secondLink} onClick={(e) => {
                       e.preventDefault();
                       handleLinkClick('/proyectos/proyecto4');
-                    }}>Piloto Volar Cuna</a>
+                    }}>Piloto Volar Cuna Más</a>
                 </div>
               )}
             </div>

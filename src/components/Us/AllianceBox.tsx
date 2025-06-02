@@ -18,7 +18,7 @@ const AllianceBox: React.FC<BoxesProps> = ({ text, color, link, buttonText, butt
                 <div
                 className={styles.text}>
                   <TextBreak>{text}</TextBreak></div>
-                <a className={styles.styledButton} style={{backgroundColor:buttonColor}} href={link}>
+                <a className={styles.styledButton} style={{backgroundColor:buttonColor}} href={link} target="_blank">
                     <span>{buttonText}</span>
                 </a>
       </div>

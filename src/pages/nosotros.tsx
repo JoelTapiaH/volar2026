@@ -75,7 +75,7 @@ export default function Nosotros() {
 
         <div className={styles.timeContainer}>
         <h1>{TimeTitle}</h1>
-        {alliances &&
+        {TimeLine &&
         <div className={styles.timeWrapper}>
 
 <div className={styles.boxes2}>
@@ -96,7 +96,7 @@ export default function Nosotros() {
                     year={year}
                     icon={icon}
                 />
-                
+
                 );
             })}
 </div>

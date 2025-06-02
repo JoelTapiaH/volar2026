@@ -140,13 +140,13 @@ const Form: React.FC = () => {
             <option value="" disabled hidden>Escoge tu rol</option>
             <option value="cuidador">Cuidador</option>
             <option value="mamá o papá">Mamá o Papá</option>
-            <option value="empresa">Empresa</option>
+            <option value="empresa">Institución</option>
           </select>
         </div>
         {formData.soy === 'empresa' && (
 <div className={`${styles.empresaField} ${formData.soy === 'empresa' ? styles.visible : ''}`}>
   <div className={styles.formGroup}>
-    <label htmlFor="empresa">Nombre de Empresa</label>
+    <label htmlFor="empresa">Nombre de Institución</label>
     <input
       type="text"
       id="empresa"
