@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Navbar from "@/components/global/Navbar";
 import Footer from "@/components/global/Footer";
+import { useEffect } from 'react';
 
 export default function App({ Component, pageProps }: AppProps) {
   /*const [isLoading, setIsLoading] = useState(true);
@@ -32,6 +33,11 @@ export default function App({ Component, pageProps }: AppProps) {
     );
   }
 */
+useEffect(() => {
+    const elements = document.querySelectorAll('[data-nextjs-toast-wrapper]');
+    elements.forEach((el) => el.remove());
+  }, []);
+
   return (
     <>
       <Navbar />

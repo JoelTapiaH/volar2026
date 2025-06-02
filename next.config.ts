@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   images:{
     unoptimized: true,
   },
+  poweredByHeader: false,
   reactStrictMode: true,
   basePath: "",
   trailingSlash: true,

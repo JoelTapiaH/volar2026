@@ -74,6 +74,18 @@ button{
   cursor: auto !important;
 }*/
 
+.nextjs-container {
+  display: none !important;
+}
+
+[data-nextjs-toast-wrapper] {
+  display: none !important;
+}
+
+[data-next-badge] {
+  display: none !important;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
