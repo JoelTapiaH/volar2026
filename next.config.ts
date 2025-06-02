@@ -1,8 +1,18 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export", // ✅ clave para generar /out
+  images:{
+    unoptimized: true,
+  },
   reactStrictMode: true,
+  basePath: "",
+  trailingSlash: true,
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  transpilePackages: ["antd", "@ant-design/icons"],
 };
 
 export default nextConfig;
+
