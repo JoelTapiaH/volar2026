@@ -40,7 +40,6 @@ export default function S01_Items() {
                     <TextBreak>{text}</TextBreak>
                   </div>
                   
-                  {/* Elemento para los puntitos animados */}
                   
               </div>
             )

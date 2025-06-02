@@ -82,7 +82,43 @@ export default function Navbar() {
             </a>
               
 
-                
+            <div
+              className={styles.dropdown}
+              onMouseEnter={() => setShowPublicacionesDropdown(true)}
+              onMouseLeave={() => setShowPublicacionesDropdown(false)}
+            >
+              <p 
+                className={`${styles.mainLink} ${isActive('/proyectos') ? styles.active : ''}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleProyectosDropdown();
+                }}
+                style={{ width: "150px"}}
+              >
+                PROYECTOS
+              </p>
+              {(showPublicacionesDropdown || isMenuOpen) && (
+                <div className={styles.dropdownContent}>
+                  <a href="/proyectos/proyecto1" className={styles.secondLink} onClick={(e) => {
+                      e.preventDefault();
+                      handleLinkClick('/proyectos/proyecto1');
+                    }}>Alianzas</a>
+                  <a href="/proyectos/proyecto2" className={styles.secondLink} onClick={(e) => {
+                      e.preventDefault();
+                      handleLinkClick('/proyectos/proyecto2');
+                    }}>Volar Colaboradores</a>
+                  <a href="/proyectos/proyecto3" className={styles.secondLink} onClick={(e) => {
+                      e.preventDefault();
+                      handleLinkClick('/proyectos/proyecto3');
+                    }}>Volar en Comunidades</a>
+                  <a href="/proyectos/proyecto4" className={styles.secondLink} onClick={(e) => {
+                      e.preventDefault();
+                      handleLinkClick('/proyectos/proyecto4');
+                    }}>Piloto Volar Cuna</a>
+                </div>
+              )}
+            </div>
+
             <a 
               href="/aprendamos/aprendamos" 
               className={`${styles.mainLink} ${isActive('/aprendamos/aprendamos') ? styles.active : ''}`}
