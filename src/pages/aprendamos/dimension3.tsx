@@ -5,7 +5,7 @@ import ColorContentful from "../../../utils/TurqContentful";
 import { TextBreak } from "@/components/global/Text_break";
 import Advice from "@/components/Learn/Advice";
 
-const Petal3ID = "55MBubVyiqahUXx1LweTZ0";
+const Petal3ID = "7dcNBFv2PdEi5VVdJ3vB5i";
 
 export default function Dimension3() {
     const { data } = useContentful({ id: Petal3ID });
