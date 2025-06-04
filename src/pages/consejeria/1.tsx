@@ -70,8 +70,9 @@ const extractYouTubeId = (url: string) => {
   return match && match[2].length === 11 ? match[2] : null;
 };
 
+
   return (
-    <div style={{margin: '1em 0 3em 0'}}>
+    <div style={{margin: '1em 0 3em 0', display:'flex', flexDirection:'column', alignItems:'center'}}>
     <PageTransition>
     <div className={styles.containerAll}>
       <h1>{CTitle}</h1>
@@ -155,6 +156,9 @@ const extractYouTubeId = (url: string) => {
 )}
 
     </PageTransition>
+
+          <a className={styles.styledButton} href= {CLink} target='_blank'><span>Cuestionario Final</span></a>
+
     </div>
   );
 }
