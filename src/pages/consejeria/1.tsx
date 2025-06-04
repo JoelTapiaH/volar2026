@@ -71,10 +71,10 @@ const extractYouTubeId = (url: string) => {
 };
 
   return (
-    <>
+    <div style={{margin: '1em 0 3em 0'}}>
     <PageTransition>
     <div className={styles.containerAll}>
-
+      <h1>{CTitle}</h1>
       {/* Barra de búsqueda */}
       <input
         type="text"
@@ -155,6 +155,6 @@ const extractYouTubeId = (url: string) => {
 )}
 
     </PageTransition>
-    </>
+    </div>
   );
 }
