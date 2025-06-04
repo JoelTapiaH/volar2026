@@ -5,7 +5,7 @@ import PageTransition from '@/components/Advices/PageTransition';
 import { TextBreak } from '@/components/global/Text_break';
 
 
-const CID = "2KVKzOe2eteoaCDQbVnnfq";
+const CID = "2A58HymxH0DZ6ixFqYyWRk";
 
 export default function Consejo1() {
   const { data } = useContentful({ id: CID });

@@ -6,6 +6,7 @@ export default function Document() {
       <Head>
         <title>VOLAR</title>
         <link rel="icon" href="/favicon.png" type="image/png" />
+        
       </Head>
       <body style={{ overflowY: 'hidden' }}>
         <Main />
