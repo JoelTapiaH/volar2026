@@ -3,12 +3,12 @@ import styles from "@/styles/Learn/Petals.module.css";
 import useContentful from "../../../utils/useContentful";
 import { TextBreak } from "../global/Text_break";
 
-const Petal1ID = "6e7bBjHsocqmJw0h8yWB20";
-const Petal2ID = "2YcqfWiX2SIsXGLgC2XQQW";
-const Petal3ID = "55MBubVyiqahUXx1LweTZ0";
-const Petal4ID = "1mDhm25OwbcocBi0oRnl3h";
-const Petal5ID = "2haqekFczfeOAp8xe2FLp1";
-const Petal6ID = "4YhScFxPFQE0jho4lOaaWz";
+const Petal1ID = "5z1spfEf4Ub3uitRNTZRco";
+const Petal2ID = "4bGNgqYQvVPvpGJtJgXiEF";
+const Petal3ID = "7dcNBFv2PdEi5VVdJ3vB5i";
+const Petal4ID = "6Ygt3Yr9Xc1VuHXfEHUFo7";
+const Petal5ID = "3OgIbnZxGNomokELMetZHK";
+const Petal6ID = "6etIDzSyt9bzfY6qvnotBf";
 
 export default function FlowerParts() {
     const response1 = useContentful({ id: Petal1ID });

@@ -6,12 +6,12 @@ import useContentful from "../../../utils/useContentful";
 import { TextBreak } from "../global/Text_break";
 
 const petals = [
-  { id: "6e7bBjHsocqmJw0h8yWB20", key: "p1" },
-  { id: "2YcqfWiX2SIsXGLgC2XQQW", key: "p2" },
-  { id: "55MBubVyiqahUXx1LweTZ0", key: "p3" },
-  { id: "1mDhm25OwbcocBi0oRnl3h", key: "p4" },
-  { id: "2haqekFczfeOAp8xe2FLp1", key: "p5" },
-  { id: "4YhScFxPFQE0jho4lOaaWz", key: "p6" },
+  { id: "5z1spfEf4Ub3uitRNTZRco", key: "p1" },
+  { id: "4bGNgqYQvVPvpGJtJgXiEF", key: "p2" },
+  { id: "7dcNBFv2PdEi5VVdJ3vB5i", key: "p3" },
+  { id: "6Ygt3Yr9Xc1VuHXfEHUFo7", key: "p4" },
+  { id: "3OgIbnZxGNomokELMetZHK", key: "p5" },
+  { id: "6etIDzSyt9bzfY6qvnotBf", key: "p6" },
 ];
 
 type PetalData = {
