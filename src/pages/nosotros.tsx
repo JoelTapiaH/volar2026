@@ -56,7 +56,7 @@ export default function Nosotros() {
             {OrangeContentful(text)}
             </div>
 
-            <a className={styles.styledButton} style={{backgroundColor:colorButton}} href="#">
+            <a className={styles.styledButton} style={{backgroundColor:colorButton}} href="/proyectos/proyecto2/" target="_blank">
                 <span>{textButton}</span>
             </a>
             </div>

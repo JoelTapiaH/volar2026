@@ -71,7 +71,7 @@ export default function Dimension2() {
                 <div className={styles.message}>
                 <TextBreak>{p1Message}</TextBreak>
                 </div>
-                <a className={styles.styledButton} style={{backgroundColor:colorButton}} href="#">
+                <a className={styles.styledButton} style={{backgroundColor:colorButton}} href="/contactanos" target="_blank">
                     <span>{textButton}</span>
                 </a>
 
