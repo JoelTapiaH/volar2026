@@ -10,6 +10,7 @@ export default function Navbar() {
   const [activeLink, setActiveLink] = useState('');
   const [showPublicacionesDropdown, setShowPublicacionesDropdown] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
 
   // Sincronizar con la ruta actual
   useEffect(() => {
@@ -34,9 +35,12 @@ export default function Navbar() {
 
   // Función para toggle del dropdown ( móvil y desktop)
   const toggleProyectosDropdown = () => {
-    setShowPublicacionesDropdown(!showPublicacionesDropdown);
+    if (window.innerWidth <= 950) { // Solo para mobile
+      setIsMobileDropdownOpen(!isMobileDropdownOpen);
+    } else { // Para desktop
+      setShowPublicacionesDropdown(!showPublicacionesDropdown);
+    }
   };
-
   // Cerrar dropdown cuando se cierra el menú hamburguesa
   useEffect(() => {
     if (!isMenuOpen) {
@@ -84,21 +88,23 @@ export default function Navbar() {
 
             <div
               className={styles.dropdown}
-              onMouseEnter={() => setShowPublicacionesDropdown(true)}
-              onMouseLeave={() => setShowPublicacionesDropdown(false)}
+              onMouseEnter={() => window.innerWidth > 950 && setShowPublicacionesDropdown(true)}
+              onMouseLeave={() => window.innerWidth > 950 && setShowPublicacionesDropdown(false)}
             >
               <p 
                 className={`${styles.mainLink} ${isActive('/proyectos') ? styles.active : ''}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  toggleProyectosDropdown();
-                }}
-                style={{ width: "150px"}}
+                onClick={toggleProyectosDropdown}
+                style={{ width: "150px", display:'flex', alignItems:'center'}}
               >
-                PROYECTOS
+                                PROYECTOS
+                {isMenuOpen && (
+                  <span className={styles.dropdownArrow}>
+                    {isMobileDropdownOpen ? '▲' : '▼'}
+                  </span>
+                )}
               </p>
-              {(showPublicacionesDropdown || isMenuOpen) && (
-                <div className={styles.dropdownContent}>
+              {(showPublicacionesDropdown || (isMenuOpen && isMobileDropdownOpen)) && (
+  <div className={`${styles.dropdownContent} ${isMobileDropdownOpen ? styles.open : ''}`}>
                   <a href="/proyectos/proyecto1" className={styles.secondLink} onClick={(e) => {
                       e.preventDefault();
                       handleLinkClick('/proyectos/proyecto1');

@@ -1,8 +1,7 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import styles from "../../styles/Advices/Advice.module.css";
 import useContentful from "../../../utils/useContentful";
 import PageTransition from '@/components/Advices/PageTransition';
-import { title } from 'process';
 import { TextBreak } from '@/components/global/Text_break';
 
 
@@ -15,6 +14,19 @@ export default function Consejo1() {
   const itemsPerPage = 6; // Número de artículos por página
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState<{ type: 'image' | 'video'; url: string } | null>(null);
+  const typeformRef = useRef(null);
+
+      //Typeform
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src = "//embed.typeform.com/next/embed.js";
+        script.async = true;
+        document.body.appendChild(script);
+        
+        return () => {
+        document.body.removeChild(script);
+        };
+    }, []);
 
   if (!data || !(data as any).fields) {
     return null;
@@ -71,6 +83,7 @@ const extractYouTubeId = (url: string) => {
 };
 
 
+
   return (
     <div style={{margin: '1em 0 3em 0', display:'flex', flexDirection:'column', alignItems:'center'}}>
     <PageTransition>
@@ -84,6 +97,19 @@ const extractYouTubeId = (url: string) => {
         onChange={handleSearchChange}
         className={styles.searchBar}
       />
+
+      {/* Paginación */}
+      <div className={styles.pagination}>
+        {Array.from({ length: totalPages }, (_, index) => (
+          <button
+            key={index + 1}
+            onClick={() => handlePageChange(index + 1)}
+            className={currentPage === index + 1 ? styles.activePage : ''}
+          >
+            {index + 1}
+          </button>
+        ))}
+      </div>
 
       <div className={styles.contentContainer}>
         {currentArticles.map((card: any, index: number) => {
@@ -99,23 +125,19 @@ const extractYouTubeId = (url: string) => {
           const popLinkYT = card.fields.adviceInfoLink;
           return (
                   <div className={styles.container} style={{borderColor: color}} onClick={() => handleContainerClick(card)}>
-                      <div className={styles.top} >
-                          <img src={imgUrl} className={styles.image}/>
-                          <div className={styles.content} style={{backgroundColor: color}}>
-                              <div className={styles.age}>
-                                {age}
-                              </div>
-                              <div className={styles.tag}>
-                                {tag}
-                              </div>
-                              <div className={styles.title} >
-                                <TextBreak>{title}</TextBreak> 
-                              </div>
-                          </div>
-                      </div>
-                      <div className={styles.text} style={{color: color}}>
-                          {text}
-                      </div>
+                      <img src={imgUrl} className={styles.image}/>
+                      <div className={styles.content} style={{backgroundColor: color}}>
+                        <div className={styles.age}>
+                          {age}
+                        </div>
+                        <div className={styles.tag}>
+                          {tag}
+                        </div>
+                        <div className={styles.title}>
+                        {title}
+                        </div>
+        </div>
+
                   </div>
           );
         })}
@@ -157,7 +179,9 @@ const extractYouTubeId = (url: string) => {
 
     </PageTransition>
 
-          <a className={styles.styledButton} href= {CLink} target='_blank'><span>Cuestionario Final</span></a>
+    <div className={styles.form}>
+      <div data-tf-live={CLink} ref={typeformRef} style={{display:'flex', justifyContent:'center'}}></div>
+    </div>
 
     </div>
   );

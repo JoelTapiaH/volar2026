@@ -196,6 +196,15 @@
 }
 
 
+
+.dropdownArrow {
+  margin-left: 8px;
+  font-size: 0.8em;
+}
+
+
+
+
   @media (max-width: 1340px) {
 	.links {
 		gap: 3rem;
@@ -249,12 +258,21 @@
 	font-size: 18px;
 }
 	.dropdownContent {
-	  position: static; /* Ajustar el dropdown para mobile */
-	  width: 100%;
-	  text-align: center;
-	  padding: 1em;
+    position: static;
+    width: 100%;
+    text-align: center;
+    display: none;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
 	}
-  
+    .dropdownContent.open {
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    padding: 1em 0;
+  }
 	.envelopbtn {
 	  margin-top: 2rem; /* Ajustar el margen del botón POSTULA */
 	}
