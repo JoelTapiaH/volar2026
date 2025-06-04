@@ -2,6 +2,8 @@ import { useState } from 'react';
 import styles from "../../styles/Advices/Advice.module.css";
 import useContentful from "../../../utils/useContentful";
 import PageTransition from '@/components/Advices/PageTransition';
+import { title } from 'process';
+import { TextBreak } from '@/components/global/Text_break';
 
 
 const C1ID = "2KVKzOe2eteoaCDQbVnnfq";
@@ -10,7 +12,9 @@ export default function Consejo1() {
   const { data } = useContentful({ id: C1ID });
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 12; // Número de artículos por página
+  const itemsPerPage = 6; // Número de artículos por página
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState<{ type: 'image' | 'video'; url: string } | null>(null);
 
   if (!data || !(data as any).fields) {
     return null;
@@ -23,7 +27,7 @@ export default function Consejo1() {
 
   // Filtrar artículos basados en el término de búsqueda
   const filteredArticles = reversedArticles.filter((card: any) =>
-    card.fields.articleTitle.toLowerCase().includes(searchTerm.toLowerCase())
+    card.fields.adviceTitle.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   // Calcular el número total de páginas
@@ -34,6 +38,8 @@ export default function Consejo1() {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentArticles = filteredArticles.slice(indexOfFirstItem, indexOfLastItem);
 
+
+
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
     setCurrentPage(1); // Resetear a la primera página al buscar
@@ -43,10 +49,31 @@ export default function Consejo1() {
     setCurrentPage(pageNumber);
   };
 
+  const handleContainerClick = (card: any) => {
+  if (card.fields.adviceInfoImg?.fields?.file?.url) {
+    setModalContent({
+      type: 'image',
+      url: `https:${card.fields.adviceInfoImg.fields.file.url}`,
+    });
+  } else if (card.fields.adviceInfoLink) {
+    setModalContent({
+      type: 'video',
+      url: card.fields.adviceInfoLink,
+    });
+  }
+  setIsModalOpen(true);
+};
+
+const extractYouTubeId = (url: string) => {
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+  const match = url.match(regExp);
+  return match && match[2].length === 11 ? match[2] : null;
+};
+
   return (
     <>
     <PageTransition>
-    <div className={styles.container}>
+    <div className={styles.containerAll}>
 
       {/* Barra de búsqueda */}
       <input
@@ -57,29 +84,38 @@ export default function Consejo1() {
         className={styles.searchBar}
       />
 
-      <div className={styles.content}>
+      <div className={styles.contentContainer}>
         {currentArticles.map((card: any, index: number) => {
           const imgUrl = `https:${card.fields.adviceImg.fields.file.url}`;
-          const infoImg = `https:${card.fields.adviceInfoImg.fields.file.url}`;
+          const age = card.fields.adviceAge;
+          const tag = card.fields.adviceTag;
+          const text = card.fields.adviceText;
+          const title = card.fields.adviceTitle;
+          const color = card.fields.adviceColor;
+          const popImage = card.fields.adviceInfoImg?.fields?.file?.url 
+    ? `https:${card.fields.adviceInfoImg.fields.file.url}` 
+    : null;
+          const popLinkYT = card.fields.adviceInfoLink;
           return (
-                <div className={styles.advice}>
-                  <div className={styles.container} onClick={onClick}>
-                    <img src={imgUrl} className={styles.image}/>
-                          <div className={styles.content} >
+                  <div className={styles.container} style={{borderColor: color}} onClick={() => handleContainerClick(card)}>
+                      <div className={styles.top} >
+                          <img src={imgUrl} className={styles.image}/>
+                          <div className={styles.content} style={{backgroundColor: color}}>
                               <div className={styles.age}>
                                 {age}
                               </div>
                               <div className={styles.tag}>
                                 {tag}
                               </div>
-                              <div className={styles.title}>
-                              {text}
+                              <div className={styles.title} >
+                                <TextBreak>{title}</TextBreak> 
                               </div>
-                            
                           </div>
-
+                      </div>
+                      <div className={styles.text} style={{color: color}}>
+                          {text}
+                      </div>
                   </div>
-                </div>
           );
         })}
       </div>
@@ -97,6 +133,27 @@ export default function Consejo1() {
         ))}
       </div>
     </div>
+
+        {isModalOpen && modalContent && (
+  <div className={styles.modalOverlay} onClick={() => setIsModalOpen(false)}>
+    <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+      {modalContent.type === 'image' ? (
+        <img src={modalContent.url} alt="Modal content" className={styles.modalImage} />
+      ) : (
+        <iframe
+          src={`https://www.youtube.com/embed/${extractYouTubeId(modalContent.url)}`}
+          className={styles.modalVideo}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      )}
+      <button className={styles.closeButton} onClick={() => setIsModalOpen(false)}>
+        ×
+      </button>
+    </div>
+  </div>
+)}
+
     </PageTransition>
     </>
   );
