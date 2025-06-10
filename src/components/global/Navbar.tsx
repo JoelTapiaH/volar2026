@@ -12,6 +12,21 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
 
+    // Efecto para controlar el scroll del body cuando el menú está abierto
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Limpieza al desmontar el componente
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isMenuOpen]);
+
+
   // Sincronizar con la ruta actual
   useEffect(() => {
     setActiveLink(router.pathname);
@@ -61,7 +76,8 @@ export default function Navbar() {
           <span></span>
         </button>
 
-        <div className={`${styles.menu} ${isMenuOpen ? styles.open : ''}`}>
+        <div className={`${styles.menu} ${isMenuOpen ? styles.open : ''}`}
+        style={{ overflowY: isMenuOpen ? 'auto' : 'visible' }}>
           <div className={styles.links}>
             <a 
               href="/" 

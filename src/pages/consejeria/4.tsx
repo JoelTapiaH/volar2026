@@ -15,18 +15,55 @@ export default function Consejo1() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState<{ type: 'image' | 'video'; url: string } | null>(null);
   const typeformRef = useRef(null);
+  const [typeformLoaded, setTypeformLoaded] = useState(false);
 
-//Typeform
-    useEffect(() => {
-        const script = document.createElement('script');
-        script.src = "//embed.typeform.com/next/embed.js";
-        script.async = true;
-        document.body.appendChild(script);
-        
-        return () => {
-        document.body.removeChild(script);
-        };
-    }, []);
+  // Cargar Typeform con IntersectionObserver
+  useEffect(() => {
+    if (!typeformRef.current || typeformLoaded) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !typeformLoaded) {
+            loadTypeform();
+          }
+        });
+      },
+      { threshold: 0.1 } // Dispara cuando el 10% del elemento es visible
+    );
+
+    observer.observe(typeformRef.current);
+
+    return () => {
+      if (typeformRef.current) {
+        observer.unobserve(typeformRef.current);
+      }
+    };
+  }, [typeformLoaded]);
+
+  const loadTypeform = () => {
+    // Limpiar cualquier Typeform existente
+    if (typeformRef.current) {
+      typeformRef.current.innerHTML = '';
+    }
+
+    const script = document.createElement('script');
+    script.src = "//embed.typeform.com/next/embed.js";
+    script.async = true;
+    script.onload = () => setTypeformLoaded(true);
+    document.body.appendChild(script);
+  };
+
+  // Cargar Typeform al montar el componente (fallback si IntersectionObserver no funciona)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!typeformLoaded) {
+        loadTypeform();
+      }
+    }, 1000); // Intento de carga después de 1 segundo
+
+    return () => clearTimeout(timer);
+  }, []);
 
   if (!data || !(data as any).fields) {
     return null;

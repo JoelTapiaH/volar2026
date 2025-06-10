@@ -149,6 +149,70 @@
 }
 
 
+
+
+/*MODAL*/
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+
+}
+
+.modalContent {
+  width: 90%;
+  max-width: 800px;
+  position: relative;
+      display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalVideo {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border: none;
+}
+
+.modalImage {
+  max-width: 95%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.closeButton {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.modalContent >button {
+    padding: 0;
+}
+
+
+
+
+
+@media (max-width: 861px) {
+    .modalVideo {
+        width: 600px;
+    }
+}
 @media (max-width:790px) {
     .paragraph {
     width: 70%;
@@ -172,6 +236,36 @@
     margin-right: 1em;
 }
 }
+@media (max-width: 640px) and (orientation: portrait) {
+  .modalOverlay {
+    transform: rotate(90deg);
+    transform-origin: center center;
+
+    width: 100vh;
+    height: 100vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+  }
+  
+  .modalContent {
+    width: 100vh;
+    height: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    .modalVideo {
+        width: 680px;
+    }
+    .closeButton {
+        top: 20px;
+        right: 20px;
+    }
+}
+
+
 @media (max-width:610px) {
 .heading {
     display: flex;
@@ -194,20 +288,24 @@
 }
 }
 
-
-.modalOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    cursor: pointer;
+@media (max-width:424px) {
+.modalVideo {
+        width: 620px;
+    }
 }
+@media (max-width:360px) {
+.modalVideo {
+        width: 580px;
+    }
+}
+@media (max-width:348px) {
+.modalVideo {
+        width: 540px;
+    }
+}
+
+
+
 
 .modalContent {
     position: relative;

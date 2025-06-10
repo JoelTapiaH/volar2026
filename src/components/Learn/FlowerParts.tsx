@@ -49,7 +49,7 @@ export default function FlowerParts() {
     const p6Icon = response6.data.fields.p1Icon.fields.file.url;
     return (
         <div className={styles.container}>
-            <a href={`/aprendamos/dimension1`} target="_blank">
+            <a href={`/aprendamos/dimension1`}>
                 <div className={styles.petal}>
 
                     <img src={p1Icon} className={styles.img}/>
@@ -59,7 +59,7 @@ export default function FlowerParts() {
                 </div>
             </a>
 
-            <a href={`/aprendamos/dimension2`} target="_blank">
+            <a href={`/aprendamos/dimension2`}>
                 <div className={styles.petal}>
                     <img src={p2Icon} className={styles.img}/>
                 </div>
@@ -68,7 +68,7 @@ export default function FlowerParts() {
                 </div>
             </a>
 
-            <a href={`/aprendamos/dimension3`} target="_blank">
+            <a href={`/aprendamos/dimension3`}>
                 <div className={styles.petal}>
 
                     <img src={p3Icon} className={styles.img}/>
@@ -78,7 +78,7 @@ export default function FlowerParts() {
                 </div>
             </a>
 
-            <a href={`/aprendamos/dimension4`} target="_blank">
+            <a href={`/aprendamos/dimension4`}>
                 <div className={styles.petal}>
 
                     <img src={p4Icon} className={styles.img}/>
@@ -88,7 +88,7 @@ export default function FlowerParts() {
                 </div>
             </a>
 
-            <a href={`/aprendamos/dimension5`} target="_blank">
+            <a href={`/aprendamos/dimension5`}>
                 <div className={styles.petal}>
 
                     <img src={p5Icon} className={styles.img}/>
@@ -100,7 +100,7 @@ export default function FlowerParts() {
 
 
 
-            <a href={`/aprendamos/dimension6`} target="_blank">
+            <a href={`/aprendamos/dimension6`}>
                 <div className={styles.petal}>
 
 

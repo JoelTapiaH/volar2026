@@ -151,6 +151,21 @@
   color: var(--background) !important;
 }
 */
+
+
+.menu.open {
+  /* ... otras propiedades ... */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  z-index: 1000;
+  background: white; /* o el color de fondo que uses */
+  height: 100vh;
+}
+
 @media (max-width:1200px) {
   .navbar {
 	padding: 0 1rem;
