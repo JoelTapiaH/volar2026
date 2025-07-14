@@ -45,7 +45,7 @@ export default function Footer() {
     if (!data || !(data as any).fields) {
       return null;
     }
-    const { contactIG, contactFB, contactYT, contactMail, contactAddress, contactTerms, contactLogo, contactBreca } = (data as any).fields;
+    const { contactIG, contactFB, contactYT, contactMail, contactAddress, contactTerms, contactLogo, contactBreca, contactTrataPersonas, contactDatosPersonales, contactDerechoArco, contactSST} = (data as any).fields;
     const logo = data.fields.contactLogo.fields.file.url;
     const logoBreca = data.fields.contactBreca.fields.file.url;
 
@@ -64,7 +64,11 @@ export default function Footer() {
                 </a>
                 <div className={styles.addres}>
                     <h4>{contactAddress}</h4>
-                    <a href={contactTerms} target="_blank"><div className={styles.terms}>Términos y condiciones</div></a>
+                    {/* <a href={contactTerms} target="_blank"><div className={styles.terms}>Términos y condiciones</div></a> */}
+                    <a href={contactTrataPersonas} target="_blank"><div className={styles.terms}>Trata de Personas</div></a>
+                    <a href={contactDatosPersonales} target="_blank"><div className={styles.terms}>Datos Personales</div></a>
+                    <a href={contactDerechoArco} target="_blank"><div className={styles.terms}>Derecho Arco</div></a>
+                    <a href={contactSST} target="_blank"><div className={styles.terms}>SST</div></a>
                 </div>
         </div>
         <div className={styles.socialMedia}>
