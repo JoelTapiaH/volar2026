@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import styles from "@/styles/Us/Us.module.css";
 import useContentful from "../../utils/useContentful";
 import OrangeContentful from "../../utils/OrangeContentful";
@@ -40,8 +41,18 @@ export default function Nosotros() {
 
     const TimeTitle = response1.data.fields.usTimeLineTitle;
     const AllianceTitle = response1.data.fields.usAlliancesTitle;
+    const jsonLd: string | null = response1.data.fields.jsonLd ?? null;
 
     return (
+        <>
+        {jsonLd && (
+            <Head>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: jsonLd }}
+                />
+            </Head>
+        )}
         <div className={styles.container}>
             <div className={styles.heading}>
             <div className={styles.title}>
@@ -150,5 +161,6 @@ export default function Nosotros() {
         }
 
         </div>
+        </>
     );
 }
