@@ -2,8 +2,8 @@
 .footer {
     max-width: 100%;
     height: 30vh;
-    color: var(--darkPurple);
-    background-color: white;
+    color: white;
+    background-color: var(--darkPurple);
     display: flex;
     flex-direction: row;
     position: relative;
@@ -28,7 +28,7 @@
     gap: 0;
     align-items: flex-start;
     position: relative;
-    background-color: white;
+    background-color: var(--darkPurple);
     z-index: 1;
 }
 .content {
@@ -47,7 +47,7 @@
     flex-direction: row;
     align-items: center; 
     gap: 18px;
-    color:var(--darkPurple);
+    color: white;
     font-weight: 500;
     font-size: clamp(10px, 2em, 18px);
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -84,7 +84,7 @@
     font-size: clamp(10px, 1em, 14px);
     font-weight: 500;
     box-sizing: border-box;
-    color: grey;
+    color: #a0aec0;
 }
 
 .socialMedia {
@@ -111,6 +111,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.socialMedia > a > div > img {
+    filter: brightness(0) invert(1);
 }
 .socialMedia > a > div:hover{
     border-radius: 80px;
