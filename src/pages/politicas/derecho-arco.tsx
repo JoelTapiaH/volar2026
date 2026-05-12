@@ -24,14 +24,9 @@ export default function DerechoArco() {
         <title>Derecho Arco — Volar</title>
         <meta name="robots" content="noindex" />
       </Head>
-      <div style={{ width: "100%", height: "100vh", display: "flex", flexDirection: "column" }}>
-        <div style={{ padding: "1em 2em", background: "var(--Softturq)" }}>
-          <h1 style={{ color: "var(--darkTurq)", margin: 0, fontSize: "clamp(16px, 2vw, 24px)" }}>
-            Derecho Arco
-          </h1>
-        </div>
+      <div style={{ width: "100%", height: "calc(100vh - 80px)", display: "flex", flexDirection: "column" }}>
         {viewerUrl ? (
-          <iframe src={viewerUrl} style={{ flex: 1, border: "none", width: "100%" }} title="Derecho Arco" />
+          <iframe src={viewerUrl} style={{ flex: 1, border: "none", width: "100%", height: "100%" }} title="Derecho Arco" />
         ) : (
           <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", color: "gray" }}>
             Documento no disponible.
