@@ -1,6 +1,5 @@
 "use client";
 import * as React from "react";
-import "react-multi-carousel/lib/styles.css";
 import useContentful from "../../../../utils/useContentful";
 import Button_App from "./Button_App";
 import styles from "@/styles/banner/buttonApp.module.css";

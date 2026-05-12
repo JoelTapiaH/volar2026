@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "@/styles/Home/S04.module.css";
 import useContentful from "../../../utils/useContentful";
-import "react-multi-carousel/lib/styles.css";
 
 import logo from "@/assets/images/LOGO_VOLAR.png";
 import Image from "next/image";
