@@ -10,6 +10,7 @@ import ImageItem from "@/components/Projects/Gallery/Image";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import SEOHead from "@/components/global/SEOHead";
 
 const ComunidadesID = "3Dazc95S7xWCDX6zot2gnd";
 
@@ -177,7 +178,7 @@ export const Proyecto3 = ({ id }: ImageProps) => {
     return null;
     }
 
-    const { proTitle, proText, proSubTitle, proPhrase, proGalleryTitle, proColor, proSteps,proGalleryItems} = (data as any).fields;
+    const { proTitle, proText, proSubTitle, proPhrase, proGalleryTitle, proColor, proSteps, proGalleryItems, seoTitle, seoDescription } = (data as any).fields;
 
     const handlePrevious = () => {
     if (carouselRef.current) {
@@ -191,6 +192,8 @@ export const Proyecto3 = ({ id }: ImageProps) => {
     }
     };
     return (
+        <>
+        <SEOHead title={seoTitle} description={seoDescription} />
         <div className={styles.container} >
             <div className={styles.heading} style={{backgroundColor: proColor}}>
                     <div className={styles.floatingBackground}>
@@ -298,7 +301,8 @@ export const Proyecto3 = ({ id }: ImageProps) => {
                         </SecondBlockChild>
                         </section>
         </div>
-            );
+        </>
+    );
 };
 
 export default Proyecto3;

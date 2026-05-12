@@ -11,7 +11,6 @@
     box-sizing: border-box;
     justify-content: space-evenly;
     margin: 0 auto;
-
     overflow: hidden;
 }
 .logo, .logoBreca  {
@@ -21,11 +20,12 @@
 .contactInfo {
     width: 30%;
     height: 100%;
-    padding: 4em 4em 3.2em 4em;
+    padding: 1.8em 4em 1.8em 4em;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 0;
     align-items: flex-start;
     position: relative;
     background-color: white;
@@ -38,6 +38,7 @@
     font-size: clamp(11px, 4em, 38px);
     font-weight: 650;
     letter-spacing: 0.1em;
+    margin-bottom: 0.1em;
 }
 
 .contactInput {
@@ -71,6 +72,7 @@
     justify-content: flex-start;
     flex-direction: column;
     align-items: flex-start;
+    margin-top: 0.15em;
 }
 .addres > h4 {
     font-weight: 400 !important;

@@ -60,7 +60,7 @@ const SecondBlockChild = styled.div`
       }
     }
     .react-multi-carousel-item {
-      padding: 0 10px;
+      padding: 0 20px;
           display: flex;
         justify-content: center;
     }
@@ -117,7 +117,7 @@ display: none;
 const responsive = {
     desktop1: {
     breakpoint: { max: 3000, min: 1450 },
-    items: 4,
+    items: 3,
     slidesToSlide: 1,
   },
   desktop: {

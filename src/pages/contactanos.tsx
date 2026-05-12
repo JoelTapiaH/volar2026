@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import styles from '../styles/Contact/Contact.module.css';
+import SEOHead from '@/components/global/SEOHead';
 
 const Form: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -69,6 +70,8 @@ const Form: React.FC = () => {
   };
 
   return (
+    <>
+    <SEOHead title="Contáctanos" description="Ponte en contacto con el equipo de Volar. Escríbenos y te responderemos a la brevedad." />
     <div className={styles.container}>
       <div className={styles.left}>
             <svg className={styles.leftCloud} width="128" height="91" viewBox="0 0 128 91" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -207,6 +210,7 @@ const Form: React.FC = () => {
       </div>
 
     </div>
+    </>
   );
 };
 

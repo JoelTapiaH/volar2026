@@ -1,5 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Index.module.css";
+import SEOHead from "@/components/global/SEOHead";
 import Hero from "@/components/Home/Hero";
 import S01_Items from "@/components/Home/S01_Items";
 import S02_Map from "@/components/Home/S02_Map";
@@ -17,9 +18,12 @@ export default function Home() {
 
   const jsonLd: string | null = data?.fields?.jsonLd ?? null;
   const jsonLdProgram: string | null = data?.fields?.jsonLdProgram ?? null;
+  const seoTitle: string | undefined = data?.fields?.seoTitle;
+  const seoDescription: string | undefined = data?.fields?.seoDescription;
 
   return (
     <>
+      <SEOHead title={seoTitle} description={seoDescription} />
       <Head>
         {jsonLd && (
           <script

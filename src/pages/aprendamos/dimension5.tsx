@@ -4,6 +4,7 @@ import useContentful from "../../../utils/useContentful";
 import ColorContentful from "../../../utils/TurqContentful";
 import { TextBreak } from "@/components/global/Text_break";
 import Advice from "@/components/Learn/Advice";
+import SEOHead from "@/components/global/SEOHead";
 
 const Petal5ID = "3OgIbnZxGNomokELMetZHK";
 
@@ -18,7 +19,7 @@ export default function Dimension1() {
       return null;
     }
 
-    const { p1Title, p1Color, p1Icon, p1Paragraph, p1Boxes, p1Message, p1Button, p1Icon2 } = (data as any).fields;
+    const { p1Title, p1Color, p1Icon, p1Paragraph, p1Boxes, p1Message, p1Button, p1Icon2, seoTitle, seoDescription } = (data as any).fields;
     const icon = data.fields.p1Icon.fields.file.url;
     const icon2 = data.fields.p1Icon2.fields.file.url;
     const textButton = data.fields.p1Button.fields.buttonText;
@@ -49,6 +50,8 @@ export default function Dimension1() {
     };
 
     return (
+        <>
+        <SEOHead title={seoTitle} description={seoDescription} />
         <div className={styles.container}>
             <div className={styles.heading} style={{backgroundColor: p1Color}}>
                     <div className={styles.petalBackground}>
@@ -116,5 +119,6 @@ export default function Dimension1() {
                 </div>
             )}
         </div>
+        </>
     );
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import SEOHead from "@/components/global/SEOHead";
 import styles from "@/styles/Us/Us.module.css";
 import useContentful from "../../utils/useContentful";
 import OrangeContentful from "../../utils/OrangeContentful";
@@ -42,9 +43,12 @@ export default function Nosotros() {
     const TimeTitle = response1.data.fields.usTimeLineTitle;
     const AllianceTitle = response1.data.fields.usAlliancesTitle;
     const jsonLd: string | null = response1.data.fields.jsonLd ?? null;
+    const seoTitle: string | undefined = response1.data.fields.seoTitle;
+    const seoDescription: string | undefined = response1.data.fields.seoDescription;
 
     return (
         <>
+        <SEOHead title={seoTitle} description={seoDescription} />
         {jsonLd && (
             <Head>
                 <script

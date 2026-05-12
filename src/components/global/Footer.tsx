@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import styles from "@/styles/Footer.module.css";
 import  ig from "@/assets/images/ig.svg";
 import yt from "@/assets/images/yt.png";
@@ -45,7 +46,7 @@ export default function Footer() {
     if (!data || !(data as any).fields) {
       return null;
     }
-    const { contactIG, contactFB, contactYT, contactMail, contactAddress, contactTerms, contactLogo, contactBreca, contactTrataPersonas, contactDatosPersonales, contactDerechoArco, contactSST} = (data as any).fields;
+    const { contactIG, contactFB, contactYT, contactMail, contactAddress } = (data as any).fields;
     const logo = data.fields.contactLogo.fields.file.url;
     const logoBreca = data.fields.contactBreca.fields.file.url;
 
@@ -53,7 +54,6 @@ export default function Footer() {
     <footer className={styles.footer}>
         <div className={styles.floatingBackground}>
                   {floatingShapes}
-
                 <img src={logo} className={styles.logo}/>
                 <img src={logoBreca} className={styles.logoBreca}/>
         </div>
@@ -64,11 +64,10 @@ export default function Footer() {
                 </a>
                 <div className={styles.addres}>
                     <h4>{contactAddress}</h4>
-                    {/* <a href={contactTerms} target="_blank"><div className={styles.terms}>Términos y condiciones</div></a> */}
-                    <a href={contactTrataPersonas} target="_blank"><div className={styles.terms}>Trata de Personas</div></a>
-                    <a href={contactDatosPersonales} target="_blank"><div className={styles.terms}>Datos Personales</div></a>
-                    <a href={contactDerechoArco} target="_blank"><div className={styles.terms}>Derecho Arco</div></a>
-                    <a href={contactSST} target="_blank"><div className={styles.terms}>SST</div></a>
+                    <Link href="/politicas/trata-de-personas"><div className={styles.terms}>Trata de Personas</div></Link>
+                    <Link href="/politicas/datos-personales"><div className={styles.terms}>Datos Personales</div></Link>
+                    <Link href="/politicas/derecho-arco"><div className={styles.terms}>Derecho Arco</div></Link>
+                    <Link href="/politicas/sst"><div className={styles.terms}>SST</div></Link>
                 </div>
         </div>
         <div className={styles.socialMedia}>
@@ -78,7 +77,10 @@ export default function Footer() {
         </div>
         <div className={styles.addresResponsive}>
                 <h4>{contactAddress}</h4>
-                <a href={contactTerms} target="_blank"><div className={styles.terms}>Términos y condiciones</div></a>
+                <Link href="/politicas/trata-de-personas"><div className={styles.terms}>Trata de Personas</div></Link>
+                <Link href="/politicas/datos-personales"><div className={styles.terms}>Datos Personales</div></Link>
+                <Link href="/politicas/derecho-arco"><div className={styles.terms}>Derecho Arco</div></Link>
+                <Link href="/politicas/sst"><div className={styles.terms}>SST</div></Link>
         </div>
     </footer>
     );
