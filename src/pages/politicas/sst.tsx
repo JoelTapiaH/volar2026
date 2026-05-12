@@ -25,20 +25,10 @@ export default function SST() {
         <meta name="robots" content="noindex" />
       </Head>
       <div style={{ width: "100%", height: "100vh", display: "flex", flexDirection: "column" }}>
-        <div style={{ padding: "1em 2em", background: "var(--Softturq)", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "0.5em" }}>
+        <div style={{ padding: "1em 2em", background: "var(--Softturq)" }}>
           <h1 style={{ color: "var(--darkTurq)", margin: 0, fontSize: "clamp(16px, 2vw, 24px)" }}>
             SST
           </h1>
-          {pdfUrl && (
-            <a
-              href={pdfUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ backgroundColor: "var(--darkTurq)", color: "white", padding: "0.5em 1.2em", borderRadius: "8px", textDecoration: "none", fontSize: "clamp(13px, 1.5vw, 16px)", fontWeight: 600 }}
-            >
-              Abrir PDF ↗
-            </a>
-          )}
         </div>
         {viewerUrl ? (
           <iframe src={viewerUrl} style={{ flex: 1, border: "none", width: "100%" }} title="SST" />
