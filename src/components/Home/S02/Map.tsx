@@ -28,6 +28,17 @@ import LAM2 from "@/assets/images/mapa/LA2.png";
 import SMP1 from "@/assets/images/mapa/S1.png";
 import SMP2 from "@/assets/images/mapa/S2.png";
 
+// TODO: reemplazar estos placeholders por las fotos reales cuando estén disponibles
+// Ica (Pisco): ICA1 = FOTO 1 (alimentos saludables), ICA2 = FOTO 2 (Sentir para criar)
+import ICA1 from "@/assets/images/mapa/S1.png";
+import ICA2 from "@/assets/images/mapa/S2.png";
+// Callao: CAL1 = FOTO 3 (Recetas ricas en hierro), CAL2 = FOTO 4 (Adivina el alimento)
+import CAL1 from "@/assets/images/mapa/S1.png";
+import CAL2 from "@/assets/images/mapa/S2.png";
+// Áncash (Chimbote): ANC1 = FOTO 5 (Crianza en equipos), ANC2 = FOTO 6 (Recetas ricas en hierro)
+import ANC1 from "@/assets/images/mapa/S1.png";
+import ANC2 from "@/assets/images/mapa/S2.png";
+
 type ButtonData = {
   id: number;
   title: string;
@@ -47,6 +58,9 @@ const InteractiveSVGButtons = () => {
     { id: 6, title: 'CUSCO', year: '2024-2025',image: CUS1, image2: CUS2,position: { cx: 259.5, cy: 258.5 }, text: 'Impacto de Volar en Comunidades y el Piloto Volar Cuna Más', des1:'Taller con FNAI', des2:'Taller "Mis primeros 5"' },
     { id: 7, title: 'PUNO', year: '2022-2025',image: PUNO1, image2: PUNO2,position: { cx: 323.5, cy: 314.5 }, text: 'Impacto de Volar en Colaboradores y Volar en Comunidades', des1:'Taller "Juguemos en familia"', des2:'Trabajo en comunidad' },
     { id: 8, title: 'AREQUIPA', year: '2024-2025',image: ARQ1, image2: ARQ2, position: { cx: 255.5, cy: 344.5 }, text: 'Impacto del Piloto Volar Cuna Más', des1:'Taller "Mis primeros 5"', des2:'Profundizando en el desarrollo cerebral' },
+    { id: 9, title: 'ÁNCASH', year: '2025-2026', image: ANC1, image2: ANC2, position: { cx: 95.5, cy: 150.5 }, text: 'Impacto de Volar en familias TASA', des1: 'Taller "Crianza en equipos: corresponsabilidad y paternidad activa" para Volar en familias TASA.', des2: 'Taller "Recetas ricas en hierro" para Volar en familias TASA.' },
+    { id: 10, title: 'CALLAO', year: '2025-2026', image: CAL1, image2: CAL2, position: { cx: 125.5, cy: 233.5 }, text: 'Impacto de Volar en familias TASA', des1: 'Taller "Recetas ricas en hierro" para Volar en familias TASA.', des2: 'Activación "Adivina el alimento" en campaña de tamizaje "Pequeños Grandes Guerreros" para Volar en familias TASA.' },
+    { id: 11, title: 'ICA', year: '2025-2026', image: ICA1, image2: ICA2, position: { cx: 155.5, cy: 290.5 }, text: 'Impacto de Volar en familias TASA e Intursa', des1: 'Taller sobre alimentos saludables y ricos en hierro en campaña de tamizaje "Pequeños Grandes Guerreros" para Volar en familias TASA.', des2: 'Taller vivencial "Sentir para criar: Entendernos para acompañar mejor" para Volar en familias Intursa.' },
   ];
 
     const activeButtonData = buttonData.find(b => b.id === activeButton) || buttonData[0];
