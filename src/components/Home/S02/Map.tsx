@@ -28,16 +28,12 @@ import LAM2 from "@/assets/images/mapa/LA2.png";
 import SMP1 from "@/assets/images/mapa/S1.png";
 import SMP2 from "@/assets/images/mapa/S2.png";
 
-// TODO: reemplazar estos placeholders por las fotos reales cuando estén disponibles
-// Ica (Pisco): ICA1 = FOTO 1 (alimentos saludables), ICA2 = FOTO 2 (Sentir para criar)
-import ICA1 from "@/assets/images/mapa/S1.png";
-import ICA2 from "@/assets/images/mapa/S2.png";
-// Callao: CAL1 = FOTO 3 (Recetas ricas en hierro), CAL2 = FOTO 4 (Adivina el alimento)
-import CAL1 from "@/assets/images/mapa/S1.png";
-import CAL2 from "@/assets/images/mapa/S2.png";
-// Áncash (Chimbote): ANC1 = FOTO 5 (Crianza en equipos), ANC2 = FOTO 6 (Recetas ricas en hierro)
-import ANC1 from "@/assets/images/mapa/S1.png";
-import ANC2 from "@/assets/images/mapa/S2.png";
+import ICA1 from "@/assets/images/mapa/ICA1.png";
+import ICA2 from "@/assets/images/mapa/ICA2.png";
+import CAL1 from "@/assets/images/mapa/CAL1.png";
+import CAL2 from "@/assets/images/mapa/CAL2.png";
+import ANC1 from "@/assets/images/mapa/ANC1.png";
+import ANC2 from "@/assets/images/mapa/ANC2.png";
 
 type ButtonData = {
   id: number;
