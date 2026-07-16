@@ -138,6 +138,7 @@ export default function Nosotros() {
 </div>
 
 
+        {/* SECCIÓN OCULTA: Líneas de acción — descomentar para mostrar
         <h1>{AllianceTitle}</h1>
         {alliances &&
         <div className={styles.boxes}>
@@ -153,16 +154,17 @@ export default function Nosotros() {
                 <AllianceBox
                     key={index}
                     text={text}
-                    color={color}                    
+                    color={color}
                     link={link}
                     buttonText={buttonText}
                     buttonColor={buttonColor}
                 />
-                
+
                 );
             })}
         </div>
         }
+        */}
 
         </div>
         </>

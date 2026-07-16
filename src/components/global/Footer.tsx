@@ -68,6 +68,7 @@ export default function Footer() {
                     <Link href="/politicas/datos-personales"><div className={styles.terms}>Datos Personales</div></Link>
                     <Link href="/politicas/derecho-arco"><div className={styles.terms}>Derecho Arco</div></Link>
                     <Link href="/politicas/sst"><div className={styles.terms}>SST</div></Link>
+                    <p className={styles.initiative}>Volar es una iniciativa de Aporta Desarrollo Sostenible Asociación Civil</p>
                 </div>
         </div>
         <div className={styles.socialMedia}>
@@ -81,6 +82,7 @@ export default function Footer() {
                 <Link href="/politicas/datos-personales"><div className={styles.terms}>Datos Personales</div></Link>
                 <Link href="/politicas/derecho-arco"><div className={styles.terms}>Derecho Arco</div></Link>
                 <Link href="/politicas/sst"><div className={styles.terms}>SST</div></Link>
+                <p className={styles.initiative}>Volar es una iniciativa de Aporta Desarrollo Sostenible Asociación Civil</p>
         </div>
     </footer>
     );

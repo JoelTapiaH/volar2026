@@ -112,7 +112,7 @@ export default function Navbar() {
                 onClick={toggleProyectosDropdown}
                 style={{ width: "150px", display:'flex', alignItems:'center'}}
               >
-                                PROYECTOS
+                                IMPACTO
                 {isMenuOpen && (
                   <span className={styles.dropdownArrow}>
                     {isMobileDropdownOpen ? '▲' : '▼'}
@@ -125,14 +125,18 @@ export default function Navbar() {
                       e.preventDefault();
                       handleLinkClick('/proyectos/proyecto1');
                     }}>Alianzas</a>
+                  {/* OCULTO: Volar Colaboradores
                   <a href="/proyectos/proyecto2" className={styles.secondLink} onClick={(e) => {
                       e.preventDefault();
                       handleLinkClick('/proyectos/proyecto2');
                     }}>Volar Colaboradores</a>
+                  */}
+                  {/* OCULTO: Volar en Comunidades
                   <a href="/proyectos/proyecto3" className={styles.secondLink} onClick={(e) => {
                       e.preventDefault();
                       handleLinkClick('/proyectos/proyecto3');
                     }}>Volar en Comunidades</a>
+                  */}
                   <a href="/proyectos/proyecto4" className={styles.secondLink} onClick={(e) => {
                       e.preventDefault();
                       handleLinkClick('/proyectos/proyecto4');
