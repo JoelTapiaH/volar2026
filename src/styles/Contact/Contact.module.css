@@ -26,6 +26,24 @@
   margin-bottom: 1em;
 }
 
+/* Texto de consentimiento de datos personales */
+.consentText {
+  color: var(--darkTurq);
+  font-size: 11px;
+  line-height: 1.4;
+  text-align: justify;
+  margin-bottom: 1em;
+}
+
+.consentText p {
+  margin: 0 0 0.75em;
+}
+
+.consentText a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 .formGroup {
   margin-top: 0.5em;
   display: flex;

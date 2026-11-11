@@ -88,6 +88,26 @@ const Form: React.FC = () => {
 
       <form className={styles.formContainer} onSubmit={handleSubmit}>
         <div className={styles.textIntro}>¡Estamos atentos a tus consultas!</div>
+
+        {/* Texto de consentimiento de datos personales (Aporta) */}
+        <div className={styles.consentText}>
+          <p>
+            Antes de continuar ¿Das tu consentimiento expreso a Aporta (domiciliada en Calle Las Begonias N°475, Of. 304-B, San Isidro, Lima) para que almacenemos tus datos en nuestro banco de “Beneficiarios de Proyectos y Servicios”, para: llevar un registro de participantes, comunicarte sobre el proyecto y medir sus impactos, así como cumplir con la ley y proteger tus datos personales? Eso aplica tanto para ti como para tu hija, hijo o tutelado. Sin considerar decisiones automatizadas.
+          </p>
+          <p>
+            Puedes revisar con qué empresas (nacionales y/o internacionales) podremos compartir la información que nos brindes en la Política de Datos Personales disponible en{' '}
+            <a href="https://www.aporta.org.pe" target="_blank" rel="noopener noreferrer">www.aporta.org.pe</a>.
+          </p>
+          <p>
+            Recuerda que el plazo de conservación es de 01 año y que, puedes cancelar este consentimiento escribiendo a{' '}
+            <a href="mailto:datospersonales@aporta.org.pe">datospersonales@aporta.org.pe</a> con el asunto &quot;DERECHOS ARCO&quot;. Pero, recuerda que, de hacerlo, no podremos contactarte para resolver tus consultas.
+          </p>
+          <p>
+            Ante cualquier duda de cómo usar tus derechos arco, puedes ingresar al “Manual de Derechos Arco”, disponible en la página web de Aporta:{' '}
+            <a href="https://www.aporta.org.pe" target="_blank" rel="noopener noreferrer">www.aporta.org.pe</a>.
+          </p>
+        </div>
+
         
         <div className={styles.formGroup}>
           <label htmlFor="nombre">Nombre</label>
